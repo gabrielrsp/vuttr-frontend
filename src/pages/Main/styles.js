@@ -175,9 +175,5 @@ export const DeleteButton = styled.div`
   cursor:pointer;
 
 
-}
-
-
-
 `;
 
