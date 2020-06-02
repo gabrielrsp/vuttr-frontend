@@ -4,7 +4,7 @@ import React from 'react';
 
 function Login() {
   return(
-    <h1>login</h1>
+    <h1>The quick brown fox jumps over the lazy dog</h1>
   );
 }
 
