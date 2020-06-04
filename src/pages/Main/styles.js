@@ -1,28 +1,131 @@
 import styled from 'styled-components';
 
+
+export const Overlay = styled.div`
+
+  position: fixed; /* Sit on top of the page content */
+  display: flex; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  flex-direction: column;
+
+`;
+
+export const ModalAdd = styled.div`
+
+  div {
+    align-self: flex-start !important ;
+    margin: 30px 0 15px 30px !important ;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 900px;
+  height: 650px;
+  background-color: #fff;
+  z-index: 2;
+
+  button {
+    align-self: flex-end;
+    margin : 20px 45px 40px;
+
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    background: #12DB89;
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+
+
+    &:hover {
+      background: #10B26C;
+    }
+
+    &:active {
+        background: #0E995D;
+    }
+
+    span {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+  }
+
+  input {
+    background: rgba(0, 0, 0, 0.1);
+    border: 0;
+    border-radius: 4px;
+    resize: vertical;
+    width: 90%;
+    height: 30px;
+    padding: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+  }
+
+  h4 {
+    align-self: flex-start ;
+    margin-left: 45px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  textarea {
+
+    background: rgba(0, 0, 0, 0.1);
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 15px 60px 10px;
+    width: 90%;
+    height: 200px;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    resize: none;
+
+  }
+
+`;
+
+
 export const Container = styled.div`
 
   div {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+
   }
 
 `;
 
 export const Header = styled.div`
   div {
-
     margin-top: 100px;
     display: block;
     justify-content: space-between;
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 36px;
   }
   h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
 `;
@@ -30,9 +133,9 @@ export const Header = styled.div`
 export const ControlBar = styled.div`
     margin: 0 3px;
     display: flex;
+
     div {
     align-items: center;
-    text-align: center;
     align-self: center;
     }
 
@@ -124,7 +227,6 @@ export const ToolList = styled.ul`
 
 export const AddButton = styled.button`
 
-
   align-items: center;
   color: #fff;
   font-weight: bold;
@@ -163,7 +265,6 @@ export const DeleteButton = styled.div`
   span {
     margin-top: 2px;
   }
-
   &:hover {
     color: #CC4C4C;
   }
