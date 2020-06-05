@@ -1,51 +1,81 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+const appearEffect = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Overlay = styled.div`
-
-  position: fixed; /* Sit on top of the page content */
-  display: flex; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
   flex-direction: column;
-
 `;
 
-export const ModalAdd = styled.div`
-
-  div {
-    align-self: flex-start !important ;
-    margin: 30px 0 15px 30px !important ;
-  }
-
+export const Modal = styled.div`
+  animation: ${appearEffect} 0.3s;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   align-self: center;
-  width: 900px;
-  height: 650px;
+  flex-direction: column;
   background-color: #fff;
   z-index: 2;
+  width: 900px;
+  border-radius: 5px;
+  margin-top: 100px !important;
+
+  div {
+    align-self: flex-start !important;
+    align-items: center;
+    margin: 20px ;
+  }
+
+  .deleteBox {
+    height: 350px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end !important ;
+  }
+
+  .deleteButton {
+    background: #F95E5A;
+    margin: 10px;
+
+    &:hover {
+      background: #CC4C4C;
+    }
+
+    &:active {
+      background: #A53F3F;
+    }
+  }
 
   button {
     align-self: flex-end;
     margin : 20px 45px 40px;
-
     align-items: center;
     color: #fff;
+    font-size: 20px;
     font-weight: bold;
     background: #12DB89;
     border: 0;
     padding: 5px 10px;
     border-radius: 5px;
     display: flex;
-
 
     &:hover {
       background: #10B26C;
@@ -74,44 +104,48 @@ export const ModalAdd = styled.div`
     padding: 18px;
     margin-bottom: 10px;
     margin-top: 10px;
+  }
 
+  .title {
+    align-self: flex-start ;
+    margin-left: 45px;
   }
 
   h4 {
-    align-self: flex-start ;
-    margin-left: 45px;
-    font-size: 18px;
+    font-size: 19px;
+    margin-top: 15px;
+  }
+
+  h3 {
+    font-size: 23px;
     margin-top: 20px;
   }
 
-  textarea {
+  h2 {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 25px;
+  }
 
+  textarea {
     background: rgba(0, 0, 0, 0.1);
     border: 0;
     border-radius: 4px;
     padding: 10px 15px 60px 10px;
     width: 90%;
     height: 200px;
-
     margin-top: 10px;
     margin-bottom: 15px;
-
     resize: none;
-
   }
-
 `;
 
-
 export const Container = styled.div`
-
   div {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
-
   }
-
 `;
 
 export const Header = styled.div`
@@ -127,29 +161,26 @@ export const Header = styled.div`
   h3 {
     font-size: 28px;
   }
-
 `;
 
 export const ControlBar = styled.div`
-    margin: 0 3px;
-    display: flex;
+  margin: 0 3px;
+  display: flex;
 
-    div {
+  div {
     align-items: center;
     align-self: center;
-    }
+  }
 
-    span {
-      font-size: 20px;
-      font-weight: bold;
-      margin-right: 5px;
-
-    }
+  span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
 
 `;
 
 export const CheckBoxInput = styled.input`
-
   width: 20px;
   height: 20px;
   padding-left: 5px;
@@ -160,12 +191,10 @@ export const CheckBoxInput = styled.input`
   border-radius: 5px;
   opacity: 1;
   font-size: 20px;
-
 `;
 
 
 export const SearchInput = styled.input`
-
   height: 50px;
   width: 403px;
   padding-left: 5px;
@@ -176,13 +205,10 @@ export const SearchInput = styled.input`
   border-radius: 5px;
   opacity: 1;
   font-size: 20px;
-
-
 `;
 
 
 export const ToolList = styled.ul`
-
   width: 1200px;
   border-radius: 4px;
   list-style-type: none;
@@ -219,11 +245,8 @@ export const ToolList = styled.ul`
       margin-bottom: 15px;
       font-size: 18px;
     }
-
   }
-
 `;
-
 
 export const AddButton = styled.button`
 
@@ -252,9 +275,7 @@ export const AddButton = styled.button`
       margin-left: 8px;
 
     }
-
 `;
-
 
 export const DeleteButton = styled.div`
   color: #F95E5A;
@@ -274,7 +295,5 @@ export const DeleteButton = styled.div`
   }
 
   cursor:pointer;
-
-
 `;
 
