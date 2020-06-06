@@ -10,7 +10,6 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
-
     width: 1200px;
     border-radius: 4px;
     list-style-type: none;
@@ -24,7 +23,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #F5F4F6 0% 0% no-repeat padding-box;
+    background: #f2f2f2 0% 0% no-repeat padding-box;
     -webkit-font-smoothing: antialiased !important;
   }
 

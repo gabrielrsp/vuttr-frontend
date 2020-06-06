@@ -293,7 +293,6 @@ export const DeleteButton = styled.div`
   &:active {
       color: #A53F3F;
   }
-
   cursor:pointer;
 `;
 
