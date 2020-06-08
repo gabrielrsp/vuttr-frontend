@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import logoBackground from '../assets/logoBackground.svg';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -12,7 +15,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     min-height: 100%;
-    width: 1200px;
+
     border-radius: 4px;
     list-style-type: none;
 
@@ -25,7 +28,9 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #f2f2f2 0% 0% no-repeat padding-box;
+    background: #f3f4f5 url(${logoBackground}) no-repeat top;
+    background-position: 65% 90%;
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased !important;
   }
 
