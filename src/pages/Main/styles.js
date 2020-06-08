@@ -260,7 +260,7 @@ export const ToolList = styled.ul`
   padding: 0px 15px;
   padding-bottom: 20px;
   margin: 20px auto;
-  background: rgba(227,230,232,0.7);
+  background: rgba(227,230,232,0.67);
   border: 0;
   border-radius: 4px;
   justify-content:center;
