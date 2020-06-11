@@ -236,11 +236,11 @@ export const Header = styled.div`
         display:block;
 
         &:hover {
-          background: #179b55;
+          color: #179b55;
         }
 
         &:active {
-          background: #148549;
+          color: #148549;
         }
       }
   }
@@ -269,11 +269,11 @@ export const Header = styled.div`
 
   h1 {
     font-size: 36px;
-    color: #e6e6e6;
+    color: #fff;
   }
   h3 {
     font-size: 28px;
-    color: #e6e6e6;
+    color: #fff;
     position: fixed;
   }
 `;
