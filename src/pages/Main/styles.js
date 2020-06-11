@@ -9,6 +9,8 @@ const appearEffect = keyframes`
   }
 `;
 
+
+
 export const Overlay = styled.div`
   position: fixed;
   display: flex;
@@ -21,6 +23,10 @@ export const Overlay = styled.div`
   background-color: rgba(0,0,0,0.5);
   z-index: 1;
   flex-direction: column;
+
+  .deleteBox {
+    width: 700px;
+  }
 `;
 
 
@@ -40,10 +46,6 @@ export const Modal = styled.div`
     align-self: flex-start !important;
     align-items: center;
     margin: 20px ;
-  }
-
-  .deleteBox {
-    height: 350px;
   }
 
   .button {
@@ -134,16 +136,13 @@ export const Modal = styled.div`
 
 export const Container = styled.div`
 
-img {
-  color: black;
-}
-
   div {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
   }
 `;
+
 
 export const Header = styled.div`
   display: flex;
@@ -155,6 +154,12 @@ export const Header = styled.div`
   margin: auto;
   justify-content: center !important;
   top: 0;
+
+
+  img {
+      border-radius: 5px;
+      align-self: flex-start;
+    }
 
 
   div {
@@ -177,9 +182,44 @@ export const Header = styled.div`
     }
   }
 
+
+  .header {
+    margin-bottom: 43px;
+  }
+
+
+  .profile{
+    text-align-last: end;
+    align-self: flex-start;
+    text-align: right;
+    margin-right: 10px;
+
+      strong {
+        color: #f26532;
+        display:block;
+        font-size: 18px;
+      }
+
+      a {
+        text-decoration: none;
+        margin-top: 2px;
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+        display:block;
+
+        &:hover {
+          color: #10B26C;
+        }
+      }
+  }
+
   .contents {
     display: contents;
     justify-content: left;
+    span {
+      font-size: 18px;
+    }
 
   }
 
@@ -207,6 +247,7 @@ export const Header = styled.div`
   h3 {
     font-size: 28px;
     color: #fff;
+    position: fixed;
   }
 `;
 
@@ -221,8 +262,6 @@ export const CheckBoxInput = styled.input`
   border: 1px solid #fff;
   border-radius: 5px;
   opacity: 1;
-  font-size: 20px;
-
 `;
 
 
@@ -334,4 +373,3 @@ export const DeleteButton = styled.div`
   }
   cursor:pointer;
 `;
-

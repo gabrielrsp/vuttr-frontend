@@ -25,11 +25,9 @@ export default function Signin() {
     dispatch(signInRequest(email, password));
   }
 
-
   return (
     <>
       <img src={logo} alt="vuttr" width={'42%'} />
-
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="E-mail" />
         <Input name="password" type="password" placeholder="Password" />

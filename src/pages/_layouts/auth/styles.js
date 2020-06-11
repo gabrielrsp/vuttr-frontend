@@ -17,9 +17,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
+  margin-top: 40px ;
   width: 100%;
   max-width: 315px;
   text-align: center;
+  align-self: start ;
 
     form {
       animation: ${appearEffect} 0.5s;
@@ -33,8 +35,9 @@ export const Content = styled.div`
         border-radius: 4px;
         height: 44px;
         padding: 0 15px;
-        color: #000000;
+        color: #fff;
         margin: 0 0 10px;
+
       }
 
       span {
@@ -64,7 +67,7 @@ export const Content = styled.div`
       }
 
       a {
-        color: #4d4d4d;
+        color: #fff;
         margin-top: 15px;
         font-size: 16px;
         opacity: 0.8;
