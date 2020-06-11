@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
 
+export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
@@ -17,7 +17,8 @@ export const Container = styled.div`
   margin-top: 80px;
 
   input{
-  background: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
   border: 0;
   border-radius: 4px;
   height: 44px;
@@ -25,7 +26,6 @@ export const Container = styled.div`
   margin: 10px 0 10px;
 
   }
-
 
   hr {
     border: 0;
@@ -36,7 +36,7 @@ export const Container = styled.div`
 
     button {
       height: 44px;
-      background: #12DB89;
+      background: #1fcc6f;
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -46,12 +46,12 @@ export const Container = styled.div`
 
 
       &:hover {
-    background: #10B26C;
-  }
+        background: #179b55;
+      }
 
-  &:active {
-      background: #0E995D;
-  }
+      &:active {
+          background: #148549;
+      }
 
   span {
       flex: 1;

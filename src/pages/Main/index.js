@@ -16,8 +16,8 @@ function Main() {
   }, [overlay]);
   const toggleModalAdd = useCallback(() => {
     toggleOverlay()
-    setAddModal(true)
     setDeleteModal(false)
+    setAddModal(true)
   }, [toggleOverlay]);
 
   const toggleModalDelete = useCallback(() => {
@@ -51,16 +51,20 @@ function Main() {
   let modalListener = (event) => {
 
     if (event.keyCode === 27) {
-      if (deleteModal === true) {
-        setOverlay(false)
-        setDeleteModal(false)
-      }
       if (addModal === true) {
         setOverlay(false)
         setAddModal(false)
+        window.removeEventListener("keydown", modalListener);
       }
+
+      if (deleteModal === true) {
+        setOverlay(false)
+        setDeleteModal(false)
+        window.removeEventListener("keydown", modalListener);
+      }
+
     }
-    window.removeEventListener("keydown", modalListener);
+
   }
   window.addEventListener("keydown", modalListener);
 
@@ -105,7 +109,7 @@ function Main() {
             <Overlay>
               <Modal ref={ref} >
                 <div>
-                  <FaPlus style={{ marginRight: '5px' }} color="black" size="25px" />
+                  <FaPlus style={{ marginRight: '5px' }} color="#f26532" size="25px" />
                   <h2>Add New Tool</h2>
                 </div>
                 <h4 className="title" >Tool Name</h4>
@@ -169,23 +173,48 @@ function Main() {
           <strong> #web #framework #node #http2 </strong>
         </li>
 
+        <li>
+          <div>
+            <a href="https://www.fastify.io/"> fastify</a>
+            <DeleteButton onClick={toggleModalDelete} >
+              <FaTimes color="#F95E5A" size="25px" />
+              <span>Remove</span>
+            </DeleteButton>
+          </div>
+          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
+          <strong> #web #framework #node #http2 </strong>
+        </li>
+
+        <li>
+          <div>
+            <a href="https://www.fastify.io/"> fastify</a>
+            <DeleteButton onClick={toggleModalDelete} >
+              <FaTimes color="#F95E5A" size="25px" />
+              <span>Remove</span>
+            </DeleteButton>
+          </div>
+          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
+          <strong> #web #framework #node #http2 </strong>
+        </li>
+
+
         {
           overlay && deleteModal ?
             <>
               <Overlay>
                 <Modal className="deleteBox" ref={ref} >
                   <div>
-                    <FaTimes style={{ marginRight: '5px' }} color="black" size="25px" />
+                    <FaTimes style={{ marginRight: '5px' }} color="#f26532" size="25px" />
                     <h2>Delete Tool</h2>
                   </div>
                   <div>
                     <h3>Want to delete this tool?</h3>
                   </div>
                   <div className='button'>
-                    <button className='deleteButton' onClick={toggleModalAdd} >
+                    <button className='deleteButton' onClick={toggleModalDelete} >
                       <span>Cancel</span>
                     </button>
-                    <button className='deleteButton' onClick={toggleModalAdd} >
+                    <button className='deleteButton' onClick={toggleModalDelete} >
                       <span>Yes, Remove</span>
                     </button>
                   </div>

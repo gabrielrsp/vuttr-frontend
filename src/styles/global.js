@@ -18,28 +18,21 @@ export default createGlobalStyle`
     min-height: 100%;
     border-radius: 4px;
     list-style-type: none;
-
     margin: auto;
+    -webkit-font-smoothing: antialiased !important;
+    background: #cccccc url(${logoBackground}) no-repeat top;
+    background-position: 65% 90%;
+    background-attachment: fixed;
 
     @media (max-width: 1250px) {
       width: 99%;
       }
 
-
     #auth {
     text-align: -webkit-center ;
     background: #4d4d4d ;
-    -webkit-font-smoothing: antialiased !important;
     height: 999px;
     margin: 0;
-
-      }
-
-    #main  {
-    background: url(${logoBackground}) no-repeat top;
-    background-position: 65% 90%;
-    background-attachment: fixed;
-    -webkit-font-smoothing: antialiased !important;
     }
 
     #profile {
@@ -47,13 +40,10 @@ export default createGlobalStyle`
     background: #4d4d4d url(${logoProfile}) no-repeat top;
     background-position: 65% 90%;
     background-attachment: fixed;
-    -webkit-font-smoothing: antialiased !important;
     height: 999px;
     padding-top: 50px;
     }
-
   }
-
 
   body, input, button {
     color: #222;

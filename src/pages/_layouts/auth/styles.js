@@ -30,7 +30,7 @@ export const Content = styled.div`
       margin-top: 22px;
 
       input {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.27);
         border: 0;
         border-radius: 4px;
         height: 44px;

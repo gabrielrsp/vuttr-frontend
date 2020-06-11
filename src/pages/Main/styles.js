@@ -9,8 +9,6 @@ const appearEffect = keyframes`
   }
 `;
 
-
-
 export const Overlay = styled.div`
   position: fixed;
   display: flex;
@@ -29,14 +27,13 @@ export const Overlay = styled.div`
   }
 `;
 
-
 export const Modal = styled.div`
   animation: ${appearEffect} 0.3s;
   display: flex;
   align-items: center;
   align-self: center;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #4d4d4d;
   z-index: 2;
   width: 900px;
   border-radius: 5px;
@@ -70,17 +67,18 @@ export const Modal = styled.div`
 
 
   .addButton {
-    background: #12DB89;
+    background: #1fcc6f;
     margin-bottom: 8px;
     margin-left: 20px;
     margin-right: 0;
 
     &:hover {
-      background: #10B26C;
-    }
-    &:active {
-      background: #0E995D;
-    }
+        background: #179b55;
+      }
+
+      &:active {
+          background: #148549;
+      }
   }
 
   button {
@@ -90,17 +88,19 @@ export const Modal = styled.div`
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    background: #12DB89;
+    background: #1fcc6f;
     border: 0;
     padding: 5px 10px;
     border-radius: 5px;
     display: flex;
+
     &:hover {
-      background: #10B26C;
-    }
-    &:active {
-        background: #0E995D;
-    }
+        background: #179b55;
+      }
+
+      &:active {
+          background: #148549;
+      }
     span {
         flex: 1;
         text-align: center;
@@ -109,7 +109,9 @@ export const Modal = styled.div`
     }
   }
   input {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 15px;
     border: 0;
     border-radius: 4px;
     resize: vertical;
@@ -126,18 +128,24 @@ export const Modal = styled.div`
   h4 {
     font-size: 19px;
     margin-top: 15px;
+    color: #fff;
+
   }
   h3 {
     font-size: 23px;
     margin-top: 20px;
+    color: #fff;
   }
   h2 {
     margin-top: 5px;
     margin-left: 5px;
     font-size: 25px;
+    color: #fff;
   }
   textarea {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    color: #fff;
     border: 0;
     border-radius: 4px;
     padding: 10px 15px 60px 10px;
@@ -146,6 +154,10 @@ export const Modal = styled.div`
     margin-top: 10px;
     margin-bottom: 15px;
     resize: none;
+
+    &::placeholder {
+      font-size: 14px;
+      }
   }
 `;
 
@@ -224,7 +236,11 @@ export const Header = styled.div`
         display:block;
 
         &:hover {
-          color: #10B26C;
+          background: #179b55;
+        }
+
+        &:active {
+          background: #148549;
         }
       }
   }
@@ -234,6 +250,7 @@ export const Header = styled.div`
     justify-content: left;
     span {
       font-size: 18px;
+      color: #f26532;
     }
 
   }
@@ -245,25 +262,21 @@ export const Header = styled.div`
     text-align: -webkit-right;
   }
 
-
   .block {
     display: block;
     margin-bottom: 10px;
   }
 
-
-
   h1 {
     font-size: 36px;
-    color: #fff;
+    color: #e6e6e6;
   }
   h3 {
     font-size: 28px;
-    color: #fff;
+    color: #e6e6e6;
     position: fixed;
   }
 `;
-
 
 export const CheckBoxInput = styled.input`
   width: 20px;
@@ -281,18 +294,18 @@ export const CheckBoxInput = styled.input`
 export const SearchInput = styled.input`
   height: 50px;
   width: 403px;
-
   padding-left: 5px;
   margin-left: 10px;
   margin-right: 5px;
   background: #fff;
-  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.27);
+  color: #fff;
+  border: 0;
   border-radius: 5px;
   opacity: 1;
   font-size: 20px;
 
 `;
-
 
 export const ToolList = styled.ul`
   width: 1200px;
@@ -312,7 +325,7 @@ export const ToolList = styled.ul`
   padding: 0px 15px;
   padding-bottom: 20px;
   margin: 20px auto;
-  background: rgba(227,230,232,0.67);
+  background: rgba(243,243,243,0.72);
   border: 0;
   border-radius: 4px;
   justify-content:center;
@@ -321,6 +334,7 @@ export const ToolList = styled.ul`
       padding-top: 10px;
       font-size: 30px;
       margin-bottom: 10px;
+      color: #f26532;
     }
 
     p {
@@ -345,7 +359,7 @@ export const AddButton = styled.button`
   border: 0;
   border-radius: 5px;
   color: #fff;
-  background: #12DB89;
+  background: #1fcc6f;
   padding: 5px 10px;
   margin-left: 10px;
 
