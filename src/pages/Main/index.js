@@ -55,11 +55,11 @@ function Main() {
 
     if (event.keyCode === 27) {
       if (deleteModal === true) {
-        toggleOverlay()
+        setOverlay(false)
         setDeleteModal(false)
       }
       if (addModal === true) {
-        toggleOverlay()
+        setOverlay(false)
         setAddModal(false)
       }
     }
