@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg';
 
-
 function Main() {
 
   const [overlay, setOverlay] = useState(false);
@@ -40,7 +39,6 @@ function Main() {
       return () => {
         document.removeEventListener("click", handleClick);
       };
-
     });
   };
 
@@ -49,7 +47,6 @@ function Main() {
   useOutsideClick(ref, () => {
     toggleOverlay(false)
   });
-
 
   let modalListener = (event) => {
 
@@ -67,9 +64,7 @@ function Main() {
   }
   window.addEventListener("keydown", modalListener);
 
-
   return (
-
     <Container id="main">
       <Header>
         <div className="block" >
@@ -79,16 +74,13 @@ function Main() {
               <h1>VUTTR</h1>
               <h3>Very Useful Tools to Remember</h3>
             </div>
-
             <div>
-
             </div>
             <div className="profile">
               <strong>Gabriel Rodrigues</strong>
               <Link to="/profile">Profile</Link>
             </div>
             <img src="https://api.adorable.io/avatars/50/abott@adorable.png" alt="avatar" />
-
           </div>
 
           <div className="flex">
@@ -98,7 +90,7 @@ function Main() {
               <CheckBoxInput type='checkbox' />
               <span >search in tags only</span>
             </div>
-            <AddButton className='add' onClick={toggleModalAdd}  >
+            <AddButton onClick={toggleModalAdd}  >
               <FaPlus color='#fff' size='25px' />
               <span>Add</span>
             </AddButton>
@@ -116,17 +108,22 @@ function Main() {
                   <FaPlus style={{ marginRight: '5px' }} color="black" size="25px" />
                   <h2>Add New Tool</h2>
                 </div>
-                <h4 className='title' >Tool Name</h4>
+                <h4 className="title" >Tool Name</h4>
                 <input type="text" />
-                <h4 className='title' >Tool Link</h4>
+                <h4 className="title" >Tool Link</h4>
                 <input type="text" />
-                <h4 className='title' >Tool Description</h4>
+                <h4 className="title" >Tool Description</h4>
                 <textarea placeholder="Description of the tool..." />
-                <h4 className='title' >Tags</h4>
+                <h4 className="title" >Tags</h4>
                 <input type="text" />
-                <button onClick={toggleModalAdd} >
-                  <span>Add Tool</span>
-                </button>
+                <div className="button">
+                  <button className="addButton" onClick={toggleModalAdd} >
+                    <span>Cancel</span>
+                  </button>
+                  <button className="addButton" onClick={toggleModalAdd} >
+                    <span>Add Tool</span>
+                  </button>
+                </div>
               </Modal>
             </Overlay>
           </>
@@ -172,31 +169,6 @@ function Main() {
           <strong> #web #framework #node #http2 </strong>
         </li>
 
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-
         {
           overlay && deleteModal ?
             <>
@@ -210,7 +182,7 @@ function Main() {
                     <h3>Want to delete this tool?</h3>
                   </div>
                   <div className='button'>
-                    <button className='deleteButton'>
+                    <button className='deleteButton' onClick={toggleModalAdd} >
                       <span>Cancel</span>
                     </button>
                     <button className='deleteButton' onClick={toggleModalAdd} >

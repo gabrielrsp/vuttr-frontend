@@ -68,6 +68,21 @@ export const Modal = styled.div`
     }
   }
 
+
+  .addButton {
+    background: #12DB89;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    margin-right: 0;
+
+    &:hover {
+      background: #10B26C;
+    }
+    &:active {
+      background: #0E995D;
+    }
+  }
+
   button {
     align-self: flex-end;
     margin : 20px 45px 40px;
@@ -90,7 +105,7 @@ export const Modal = styled.div`
         flex: 1;
         text-align: center;
         font-weight: bold;
-        margin-left: 8px;
+
     }
   }
   input {
@@ -236,9 +251,7 @@ export const Header = styled.div`
     margin-bottom: 10px;
   }
 
-  .add {
-    align-self: flex-end;
-  }
+
 
   h1 {
     font-size: 36px;
@@ -373,3 +386,5 @@ export const DeleteButton = styled.div`
   }
   cursor:pointer;
 `;
+
+
