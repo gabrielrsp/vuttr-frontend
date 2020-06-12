@@ -1,13 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-const appearEffect = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import styled from 'styled-components';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -27,139 +18,6 @@ export const Overlay = styled.div`
   }
 `;
 
-export const Modal = styled.div`
-  animation: ${appearEffect} 0.3s;
-  display: flex;
-  align-items: center;
-  align-self: center;
-  flex-direction: column;
-  background-color: #4d4d4d;
-  z-index: 2;
-  width: 900px;
-  border-radius: 5px;
-  margin-top: 100px !important;
-
-  div {
-    align-self: flex-start !important;
-    align-items: center;
-    margin: 20px ;
-  }
-
-  .button {
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end !important ;
-  }
-
-  .deleteButton {
-    background: #F95E5A;
-    margin-bottom: 8px;
-    margin-left: 20px;
-    margin-right: 0;
-
-    &:hover {
-      background: #CC4C4C;
-    }
-    &:active {
-      background: #A53F3F;
-    }
-  }
-
-
-  .addButton {
-    background: #1fcc6f;
-    margin-bottom: 8px;
-    margin-left: 20px;
-    margin-right: 0;
-
-    &:hover {
-        background: #179b55;
-      }
-
-      &:active {
-          background: #148549;
-      }
-  }
-
-  button {
-    align-self: flex-end;
-    margin : 20px 45px 40px;
-    align-items: center;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    background: #1fcc6f;
-    border: 0;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: flex;
-
-    &:hover {
-        background: #179b55;
-      }
-
-      &:active {
-          background: #148549;
-      }
-    span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
-
-    }
-  }
-  input {
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    font-size: 15px;
-    border: 0;
-    border-radius: 4px;
-    resize: vertical;
-    width: 90%;
-    height: 30px;
-    padding: 18px;
-    margin: 10px;
-  }
-  .title {
-    align-self: flex-start ;
-    margin-left: 45px;
-  }
-  h4 {
-    font-size: 19px;
-    margin-top: 15px;
-    color: #fff;
-
-  }
-  h3 {
-    font-size: 23px;
-    margin-top: 20px;
-    color: #fff;
-  }
-  h2 {
-    margin-top: 5px;
-    margin-left: 5px;
-    font-size: 25px;
-    color: #fff;
-  }
-  textarea {
-    background: rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    padding: 10px 15px 60px 10px;
-    width: 90%;
-    height: 200px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    resize: none;
-
-    &::placeholder {
-      font-size: 14px;
-      }
-  }
-`;
-
 export const Container = styled.div`
 
   div {
@@ -169,11 +27,9 @@ export const Container = styled.div`
   }
 `;
 
-
 export const Header = styled.div`
   display: flex;
   background: #4d4d4d;
-
   position: fixed;
   width: 100%;
   height: 300px;
@@ -186,7 +42,6 @@ export const Header = styled.div`
       border-radius: 5px;
       align-self: flex-start;
     }
-
 
   div {
     margin-top: 10px;
@@ -208,11 +63,9 @@ export const Header = styled.div`
     }
   }
 
-
   .header {
     margin-bottom: 43px;
   }
-
 
   .profile{
     text-align-last: end;
@@ -220,28 +73,28 @@ export const Header = styled.div`
     text-align: right;
     margin-right: 10px;
 
-      strong {
-        color: #f26532;
-        display:block;
-        font-size: 18px;
+    strong {
+      color: #f26532;
+      display:block;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      margin-top: 2px;
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      display:block;
+
+      &:hover {
+        color: #179b55;
       }
 
-      a {
-        text-decoration: none;
-        margin-top: 2px;
-        font-size: 16px;
-        color: #fff;
-        font-weight: bold;
-        display:block;
-
-        &:hover {
-          color: #179b55;
-        }
-
-        &:active {
-          color: #148549;
-        }
+      &:active {
+        color: #148549;
       }
+    }
   }
 
   .contents {
@@ -251,7 +104,6 @@ export const Header = styled.div`
       font-size: 18px;
       color: #f26532;
     }
-
   }
 
   .but {
@@ -318,16 +170,16 @@ export const ToolList = styled.ul`
   }
 
   li {
-  display: block;
-  flex: 1;
-  width: 100%;
-  padding: 0px 15px;
-  padding-bottom: 20px;
-  margin: 20px auto;
-  background: rgba(243,243,243,0.72);
-  border: 0;
-  border-radius: 4px;
-  justify-content:center;
+    display: block;
+    flex: 1;
+    width: 100%;
+    padding: 0px 15px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    background: rgba(243,243,243,0.72);
+    border: 0;
+    border-radius: 4px;
+    justify-content:center;
 
     a {
       padding-top: 10px;
@@ -362,7 +214,6 @@ export const AddButton = styled.button`
   padding: 5px 10px;
   margin-left: 10px;
 
-
   &:hover {
     background: #10B26C;
   }
@@ -385,7 +236,6 @@ export const DeleteButton = styled.div`
   margin-top: 15px;
   font-weight: bold;
   font-size: 20px;
-
 
   span {
     margin-top: 2px;
