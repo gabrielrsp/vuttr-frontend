@@ -118,8 +118,7 @@ export const Modal = styled.div`
     width: 90%;
     height: 30px;
     padding: 18px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px;
   }
   .title {
     align-self: flex-start ;

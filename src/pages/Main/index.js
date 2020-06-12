@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Container, Overlay, ToolList, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Modal } from './styles';
+import { Container, ToolList, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
 import { FaPlus, FaTimes, FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+
+import ModalAdd from '../../components/ModalAdd';
+
+import ModalDelete from '../../components/ModalDelete';
 
 import logo from '../../assets/logo.svg';
 
@@ -17,14 +21,14 @@ function Main() {
   const toggleModalAdd = useCallback(() => {
     toggleOverlay()
     setDeleteModal(false)
-    setAddModal(true)
-  }, [toggleOverlay]);
+    setAddModal(!addModal)
+  }, [addModal, toggleOverlay]);
 
   const toggleModalDelete = useCallback(() => {
     toggleOverlay()
     setAddModal(false)
-    setDeleteModal(true)
-  }, [toggleOverlay]);
+    setDeleteModal(!deleteModal)
+  }, [deleteModal, toggleOverlay]);
 
   const useOutsideClick = (ref, callback) => {
 
@@ -35,8 +39,8 @@ function Main() {
     };
     useEffect(() => {
       document.addEventListener("click", handleClick);
-
       return () => {
+
         document.removeEventListener("click", handleClick);
       };
     });
@@ -62,9 +66,7 @@ function Main() {
         setDeleteModal(false)
         window.removeEventListener("keydown", modalListener);
       }
-
     }
-
   }
   window.addEventListener("keydown", modalListener);
 
@@ -98,44 +100,22 @@ function Main() {
               <FaPlus color='#fff' size='25px' />
               <span>Add</span>
             </AddButton>
+
           </div>
         </div>
-
       </Header>
 
       {
         overlay && addModal ?
           <>
             <Overlay>
-              <Modal ref={ref} >
-                <div>
-                  <FaPlus style={{ marginRight: '5px' }} color="#f26532" size="25px" />
-                  <h2>Add New Tool</h2>
-                </div>
-                <h4 className="title" >Tool Name</h4>
-                <input type="text" />
-                <h4 className="title" >Tool Link</h4>
-                <input type="text" />
-                <h4 className="title" >Tool Description</h4>
-                <textarea placeholder="Description of the tool..." />
-                <h4 className="title" >Tags</h4>
-                <input type="text" />
-                <div className="button">
-                  <button className="addButton" onClick={toggleModalAdd} >
-                    <span>Cancel</span>
-                  </button>
-                  <button className="addButton" onClick={toggleModalAdd} >
-                    <span>Add Tool</span>
-                  </button>
-                </div>
-              </Modal>
+              <ModalAdd onModalAdd={toggleModalAdd} />
             </Overlay>
           </>
           : <></>
       }
 
       <ToolList>
-
         <li>
           <div>
             <a href="https://www.fastify.io/"> fastify</a>
@@ -147,81 +127,16 @@ function Main() {
           <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
           <strong> #web #framework #node #http2 </strong>
         </li>
-
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
 
         {
           overlay && deleteModal ?
             <>
               <Overlay>
-                <Modal className="deleteBox" ref={ref} >
-                  <div>
-                    <FaTimes style={{ marginRight: '5px' }} color="#f26532" size="25px" />
-                    <h2>Delete Tool</h2>
-                  </div>
-                  <div>
-                    <h3>Want to delete this tool?</h3>
-                  </div>
-                  <div className='button'>
-                    <button className='deleteButton' onClick={toggleModalDelete} >
-                      <span>Cancel</span>
-                    </button>
-                    <button className='deleteButton' onClick={toggleModalDelete} >
-                      <span>Yes, Remove</span>
-                    </button>
-                  </div>
-                </Modal>
+                <ModalDelete onModalDelete={toggleModalDelete} />
               </Overlay>
             </>
             : <></>
+
         }
       </ToolList>
     </Container>
