@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Container, ToolList, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
+import { ToolList, Container, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
 import { FaPlus, FaTimes, FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 import ModalAdd from '../../components/ModalAdd';
-
 import ModalDelete from '../../components/ModalDelete';
-
 import logo from '../../assets/logo.svg';
 
 function Main() {
@@ -71,39 +69,67 @@ function Main() {
   window.addEventListener("keydown", modalListener);
 
   return (
-    <Container id="main">
+    <>
+    <div>
       <Header>
-        <div className="block" >
-          <div className="flex">
-            <img style={{ marginRight: "25px" }} src={logo} alt="vuttr" width={'12%'} />
-            <div className="header">
+        <div>
+          <div className="contents">
+            <img src={logo} alt="vuttr" width={'12%'} />
+            <div className="title" >
               <h1>VUTTR</h1>
               <h3>Very Useful Tools to Remember</h3>
             </div>
-            <div>
+
+            <div className="profile" >
+              <div className="profileName">
+                <strong>Gabriel Rodrigues</strong>
+                <Link to="/profile">Profile</Link>
+              </div>
+              <img src="https://api.adorable.io/avatars/50/abott@adorable.png" alt="avatar" />
             </div>
-            <div className="profile">
-              <strong>Gabriel Rodrigues</strong>
-              <Link to="/profile">Profile</Link>
-            </div>
-            <img src="https://api.adorable.io/avatars/50/abott@adorable.png" alt="avatar" />
           </div>
 
-          <div className="flex">
-            <div className="contents" >
-              <FaSearch color='#f26532' size="28px" />
-              <SearchInput placeholder='search' />
-              <CheckBoxInput type='checkbox' />
-              <span >search in tags only</span>
-            </div>
+          <div className="control">
+            <FaSearch color='#f26532' size="28px" />
+            <SearchInput placeholder='search' />
+
+            <CheckBoxInput type='checkbox' />
+            <span className="spanCheckBox" >search in tags only</span>
+
             <AddButton onClick={toggleModalAdd}  >
               <FaPlus color='#fff' size='25px' />
               <span>Add</span>
             </AddButton>
-
           </div>
         </div>
       </Header>
+
+      <Container>
+        <ToolList>
+          <li>
+            <div className="flex">
+              <a href="https://www.fastify.io/"> fastify</a>
+              <DeleteButton onClick={toggleModalDelete} >
+                <FaTimes color="#F95E5A" size="25px" />
+                <span>Remove</span>
+              </DeleteButton>
+            </div>
+            <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
+            <strong> #web #framework #node #http2 </strong>
+          </li>
+        </ToolList>
+      </Container>
+      </div>
+
+      {
+        overlay && deleteModal ?
+          <>
+            <Overlay>
+              <ModalDelete onModalDelete={toggleModalDelete} />
+            </Overlay>
+          </>
+          : <></>
+      }
 
       {
         overlay && addModal ?
@@ -115,31 +141,7 @@ function Main() {
           : <></>
       }
 
-      <ToolList>
-        <li>
-          <div>
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
-
-        {
-          overlay && deleteModal ?
-            <>
-              <Overlay>
-                <ModalDelete onModalDelete={toggleModalDelete} />
-              </Overlay>
-            </>
-            : <></>
-
-        }
-      </ToolList>
-    </Container>
+    </>
   );
 }
 

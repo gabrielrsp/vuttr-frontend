@@ -21,12 +21,9 @@ export default createGlobalStyle`
     margin: auto;
     -webkit-font-smoothing: antialiased !important;
     background: #cccccc url(${logoBackground}) no-repeat top;
-    background-position: 65% 90%;
+    background-position: 66% 95%;
     background-attachment: fixed;
 
-    @media (max-width: 1250px) {
-      width: 99%;
-      }
 
     #auth {
     text-align: -webkit-center ;
@@ -38,7 +35,7 @@ export default createGlobalStyle`
     #profile {
     text-align: -webkit-center ;
     background: #4d4d4d url(${logoProfile}) no-repeat top;
-    background-position: 65% 90%;
+    background-position: 66% 95%;
     background-attachment: fixed;
     height: 999px;
     padding-top: 50px;
@@ -49,7 +46,6 @@ export default createGlobalStyle`
     color: #222;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-
   }
 
   button {

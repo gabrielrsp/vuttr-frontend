@@ -22,6 +22,7 @@ export const Container = styled.div`
   margin-top: 100px !important;
 
   div {
+    display: flex;
     align-self: flex-start !important;
     align-items: center;
     margin: 20px ;

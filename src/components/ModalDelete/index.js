@@ -27,8 +27,8 @@ export default function ModalDelete({ onModalDelete }) {
 
   return (
     <Container className="deleteBox" ref={ref}  >
-      <div>
-        <FaTimes style={{ marginRight: '5px' }} color="#f26532" size="25px" />
+      <div className="iconBox">
+        <FaTimes color="#f26532" size="25px" />
         <h2>Delete Tool</h2>
       </div>
       <div>

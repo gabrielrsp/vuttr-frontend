@@ -20,7 +20,7 @@ export default function ModalAdd({ onModalAdd }) {
     });
   };
 
-   const ref = useRef();
+  const ref = useRef();
 
   useOutsideClick(ref, () => {
     onModalAdd()
