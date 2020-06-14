@@ -24,6 +24,10 @@ export default createGlobalStyle`
     background-position: 66% 95%;
     background-attachment: fixed;
 
+    @media(max-width: 600px ) {
+    background-size: 90%;
+    background-position: 50% 90%;
+    }
 
     #auth {
     text-align: -webkit-center ;

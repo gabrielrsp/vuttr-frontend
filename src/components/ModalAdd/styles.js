@@ -9,7 +9,9 @@ const appearEffect = keyframes`
   }
 `;
 
+
 export const Container = styled.div`
+
   animation: ${appearEffect} 0.3s;
   display: flex;
   align-items: center;

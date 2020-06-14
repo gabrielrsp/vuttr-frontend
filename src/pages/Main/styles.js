@@ -16,88 +16,158 @@ import styled from 'styled-components';
   `;
 
   export const Header = styled.div`
-      display: flex;
-      justify-content: center ;
-      width: 100%;
-      background: #4d4d4d;
-      padding: 0 10px;
+    display: flex;
+    justify-content: center ;
+    width: 100%;
+    background: #4d4d4d;
+    padding: 0 10px;
 
     img {
         border-radius: 5px;
         align-self: flex-start;
       }
 
-      .contents {
-        margin-top: 20px ;
+    .contents {
+      display: flex;
+      margin-left: 20px;
+      margin-top: 20px ;
+      align-self:center;
+      align-items: center;
+
+      @media(max-width: 610px ) {
+        margin-left: 0px;
+        margin-top: 10px ;
+
+        .contents {
+          margin-left: 0px;
+          margin-top: 0px ;
+        }
+
+        .profileName{
+            display: none;
+        }
+
+        .logo {
+          width: 18%;
+          margin-left: 12px;
+        }
+
+        h1 {
+          display: none;
+
+          font-size: 26px;
+        }
+
+        h3 {
+          font-size: large;
+        }
+
+      }
+
+    }
+
+    .control {
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      align-items: center;
+
+      .inputBar{
+        display: contents;
+      }
+
+      .searchAddBox {
         display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: auto;
         align-items: center;
+
       }
 
-      .title {
-        margin-left: 20px;
-      }
+      @media(max-width: 610px ){
+        display: block;
+        margin-left: 0;
 
-      .control {
-        display: flex;
-        margin-top: 20px;
-        margin-bottom: 15px;
-        align-items: center;
-      }
+        svg { display: none; }
 
-      .spanCheckBox {
-        font-size: 19px;
-        font-weight: bold;
+        button { margin: auto; }
+
+        .inputBar{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 5px;
+        }
+
+        .spanCheckBox {
+          font-size: medium;
+        }
+
+      }
+    }
+
+    .title {
+      align-self: center;
+      margin-left: 10px;
+    }
+
+    .checkBoxContainer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 10px 10px;
+    }
+
+    .spanCheckBox {
+      font-size: 19px;
+      font-weight: bold;
+      color: #f26532;
+    }
+
+    .profile{
+      display: flex;
+      align-self: flex-start;
+      text-align: right;
+      margin-left: auto;
+      place-items: center;
+
+      .profileName {
+        margin-right: 12px;
+        }
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
         color: #f26532;
+        font-weight: bold;
+        display:block;
+
+        &:hover {
+          color: #f04b0f;
         }
-
-      .profile{
-        text-align: right;
-        align-self: flex-start;
-        display: flex;
-        margin-left: auto;
-
-        .profileName {
-          margin-right: 12px;
-        }
-
-        strong {
-          color: #f26532;
-          display:block;
-          font-size: 18px;
-        }
-
-        a {
-          text-decoration: none;
-          margin-top: 2px;
-          font-size: 16px;
-          color: #fff;
-          font-weight: bold;
-          display:block;
-
-          &:hover {
-            color: #179b55;
-          }
-          &:active {
-            color: #148549;
-          }
+        &:active {
+          color: #c03c0c;
         }
       }
+    }
 
-      h1 {
-        font-size: 36px;
-        color: #fff;
-      }
-      h3 {
-        font-size: 28px;
-        color: #fff;
-      }
+
+    h1 {
+      font-size: 36px;
+      color: #fff;
+    }
+    h3 {
+      font-size: 28px;
+      color: #fff;
+    }
 
   `;
 
   export const CheckBoxInput = styled.input`
     min-width: 20px;
     min-height: 20px;
-    margin-left: 10px;
     margin-right: 5px;
     background: #EBEAED ;
     border: 1px solid #fff;
@@ -107,8 +177,9 @@ import styled from 'styled-components';
 
   export const SearchInput = styled.input`
     height: 50px;
+    width: auto;
     padding-left: 5px;
-    margin: 0 5px 0 10px;
+    margin: 0 10px;
     background: rgba(0, 0, 0, 0.27);
     font-size: 20px;
     color: #fff;
@@ -117,15 +188,10 @@ import styled from 'styled-components';
 
   `;
 
-  export const Container = styled.div`
-    width: 1200px ;
-    margin: auto;
-
-  `;
-
   export const ToolList = styled.ul`
+    max-width: 1200px ;
+    margin: auto;
     display: flex;
-    width: 100%;
     border-radius: 4px;
     list-style-type: none;
     margin-top: 30px;
@@ -165,7 +231,7 @@ import styled from 'styled-components';
   export const AddButton = styled.button`
     display: flex;
     align-items: flex-end;
-    margin-left: auto !important;
+    margin: 0;
     font-weight: bold;
     font-size: 20px;
     border: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ToolList, Container, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
-import { FaPlus, FaTimes, FaSearch } from "react-icons/fa";
+import { ToolList, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
+import { FaPlus, FaTimes, FaSearch, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 import ModalAdd from '../../components/ModalAdd';
@@ -70,56 +70,56 @@ function Main() {
 
   return (
     <>
-    <div>
       <Header>
         <div>
           <div className="contents">
-            <img src={logo} alt="vuttr" width={'12%'} />
+            <img className="logo" src={logo} alt="vuttr" width={'12%'} />
             <div className="title" >
               <h1>VUTTR</h1>
               <h3>Very Useful Tools to Remember</h3>
             </div>
-
             <div className="profile" >
               <div className="profileName">
-                <strong>Gabriel Rodrigues</strong>
-                <Link to="/profile">Profile</Link>
+                <Link to="/profile">Gabriel Rodrigues</Link>
               </div>
-              <img src="https://api.adorable.io/avatars/50/abott@adorable.png" alt="avatar" />
+              <a href="/profile">
+                <FaUserCircle color='#f26532' size={28} />
+              </a>
             </div>
           </div>
 
           <div className="control">
-            <FaSearch color='#f26532' size="28px" />
-            <SearchInput placeholder='search' />
-
-            <CheckBoxInput type='checkbox' />
-            <span className="spanCheckBox" >search in tags only</span>
-
-            <AddButton onClick={toggleModalAdd}  >
-              <FaPlus color='#fff' size='25px' />
-              <span>Add</span>
-            </AddButton>
+            <div className="inputBar">
+              <FaSearch color='#f26532' size={38} />
+              <SearchInput placeholder='search' />
+            </div>
+            <div className="searchAddBox">
+              <div className="checkBoxContainer" >
+                <CheckBoxInput type='checkbox' />
+                <span className="spanCheckBox" >search in tags only</span>
+              </div>
+              <AddButton onClick={toggleModalAdd}  >
+                <FaPlus color='#fff' size='25px' />
+                <span>Add</span>
+              </AddButton>
+            </div>
           </div>
         </div>
       </Header>
 
-      <Container>
-        <ToolList>
-          <li>
-            <div className="flex">
-              <a href="https://www.fastify.io/"> fastify</a>
-              <DeleteButton onClick={toggleModalDelete} >
-                <FaTimes color="#F95E5A" size="25px" />
-                <span>Remove</span>
-              </DeleteButton>
-            </div>
-            <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-            <strong> #web #framework #node #http2 </strong>
-          </li>
-        </ToolList>
-      </Container>
-      </div>
+      <ToolList>
+        <li>
+          <div className="flex">
+            <a href="https://www.fastify.io/"> fastify</a>
+            <DeleteButton onClick={toggleModalDelete} >
+              <FaTimes color="#F95E5A" size="25px" />
+              <span>Remove</span>
+            </DeleteButton>
+          </div>
+          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
+          <strong> #web #framework #node #http2 </strong>
+        </li>
+      </ToolList>
 
       {
         overlay && deleteModal ?
