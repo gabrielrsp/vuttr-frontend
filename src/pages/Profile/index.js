@@ -2,6 +2,8 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { Container, Wrapper } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 import { signOut } from '../../store/modules/auth/actions';
 import { updateProfileRequest } from '../../store/modules/user/actions';
@@ -21,6 +23,10 @@ export default function Profile() {
   return (
       <Wrapper id="profile" >
         <Container >
+        <Link to="/main">
+          <FaArrowCircleLeft className="logoLeft" color='#f26532' size={28} />
+        </Link>
+          <h1>Profile Settings</h1>
           <Form initialData={profile} onSubmit={handleSubmit} >
             <Input name="name" placeholder="First name" />
             <Input name="email" type="email" placeholder="Email Adress" />

@@ -37,12 +37,19 @@ export default createGlobalStyle`
     }
 
     #profile {
+
+    @media(max-width: 600px ) {
+    background-size: 90%;
+    background-position: 50% 20%;
+    padding-top: 10px;
+    }
+
     text-align: -webkit-center ;
     background: #4d4d4d url(${logoProfile}) no-repeat top;
     background-position: 66% 95%;
     background-attachment: fixed;
     height: 999px;
-    padding-top: 50px;
+    padding-top: 30px;
     }
   }
 

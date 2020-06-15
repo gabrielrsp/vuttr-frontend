@@ -7,14 +7,24 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
 
   max-width: 600px;
-  margin: 50px auto;
-  margin: 30px 10px;
+  margin: 0 10px;
+
+  h1 {
+    color: #f26532;
+    margin-top: 5px;
+  }
+
+  .logoLeft{
+    display: flex;
+    margin-right: auto;
+  }
 
   form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 10px;
+
 
   input{
   background: rgba(0, 0, 0, 0.3);
@@ -23,7 +33,8 @@ export const Container = styled.div`
   border-radius: 4px;
   height: 44px;
   padding: 15px;
-  margin: 10px 0 10px;
+  margin: 5px 0 8px;
+  font-size: 15px;
 
   }
 
@@ -44,7 +55,6 @@ export const Container = styled.div`
       font-size: 16px;
       transition: background 0.2s;
 
-
       &:hover {
         background: #179b55;
       }
@@ -53,14 +63,12 @@ export const Container = styled.div`
           background: #148549;
       }
 
-  span {
-      flex: 1;
-      text-align: center;
-      font-weight: bold;
-      margin-left: 5px;
-
-    }
-
+      span {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        margin-left: 5px;
+      }
     }
   }
 
