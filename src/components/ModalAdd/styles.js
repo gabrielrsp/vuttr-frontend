@@ -12,6 +12,15 @@ const appearEffect = keyframes`
 
 export const Container = styled.div`
 
+@media(max-width: 900px ) {
+  width: 100%;
+  height: 90%;
+  margin: 87px 0px !important;
+  .title {
+    margin-left: 20px !important;
+  }
+ }
+
   animation: ${appearEffect} 0.3s;
   display: flex;
   align-items: center;

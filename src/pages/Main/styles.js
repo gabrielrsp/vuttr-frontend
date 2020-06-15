@@ -78,7 +78,7 @@ import styled from 'styled-components';
       }
 
       .searchAddBox {
-        display: flex;
+        display: contents;
         width: 100%;
         justify-content: space-between;
         margin: auto;
@@ -93,17 +93,34 @@ import styled from 'styled-components';
 
         button { margin: auto; }
 
+        input { width: -webkit-fill-available; }
+
+        .checkBoxContainer {
+          margin: unset;
+        }
+
+        .searchAddBox {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          margin: auto;
+          margin-top: 15px;
+          align-items: center;
+
+        }
+
         .inputBar{
           display: flex;
           justify-content: flex-start;
           align-items: center;
           margin-bottom: 5px;
+
+
         }
 
         .spanCheckBox {
           font-size: medium;
         }
-
       }
     }
 
@@ -122,11 +139,12 @@ import styled from 'styled-components';
       margin-left: 10px;
     }
 
+
     .checkBoxContainer {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin: unset;
+    margin-left: 10px;
     inline-size: -webkit-fill-available;
     }
 
@@ -202,40 +220,10 @@ import styled from 'styled-components';
   export const ToolList = styled.ul`
     max-width: 1200px ;
     margin: auto;
-    display: flex;
+    display: block;
     border-radius: 4px;
     list-style-type: none;
     margin-top: 30px;
-
-    li {
-      width: 100%;
-      padding: 0px 15px 20px;
-      background: rgba(243,243,243,0.72);
-      border: 0;
-      border-radius: 4px;
-
-      .flex{
-        display: flex;
-        justify-content: space-between;
-      }
-
-      a {
-        padding-top: 10px;
-        font-size: 30px;
-        margin-bottom: 10px;
-        color: #f26532;
-      }
-
-      p {
-        margin-bottom: 15px;
-        font-size: 20px;
-      }
-
-      strong {
-        margin-bottom: 15px;
-        font-size: 18px;
-      }
-    }
 
   `;
 

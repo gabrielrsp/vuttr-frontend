@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ToolList, Header, AddButton, DeleteButton, SearchInput, CheckBoxInput, Overlay } from './styles';
-import { FaPlus, FaTimes, FaSearch, FaUserCircle } from "react-icons/fa";
+import { ToolList, Header, AddButton, SearchInput, CheckBoxInput, Overlay } from './styles';
+import { FaPlus, FaSearch, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+
+import ToolItem from '../../components/ToolItem';
 
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
@@ -108,17 +110,13 @@ function Main() {
       </Header>
 
       <ToolList>
-        <li>
-          <div className="flex">
-            <a href="https://www.fastify.io/"> fastify</a>
-            <DeleteButton onClick={toggleModalDelete} >
-              <FaTimes color="#F95E5A" size="25px" />
-              <span>Remove</span>
-            </DeleteButton>
-          </div>
-          <p>Extremely fast and simple, load-overhead web framework for nodeJS. Supports http2 </p>
-          <strong> #web #framework #node #http2 </strong>
-        </li>
+
+        <ToolItem onDelete={toggleModalDelete}/>
+
+        <ToolItem onDelete={toggleModalDelete}/>
+
+        <ToolItem onDelete={toggleModalDelete}/>
+
       </ToolList>
 
       {
