@@ -81,16 +81,16 @@ function Main() {
             <div className="profile" >
               <div className="profileName">
                 <Link to="/profile">Gabriel Rodrigues</Link>
-              </div>
-              <a href="/profile">
-                <FaUserCircle color='#f26532' size={28} />
-              </a>
+              </div  >
+              <Link to="/profile">
+                <FaUserCircle color='#f26532' size={32} />
+              </Link>
             </div>
           </div>
 
           <div className="control">
             <div className="inputBar">
-              <FaSearch color='#f26532' size={38} />
+              <FaSearch className="BackgroundSearch logoSearch" color='#f26532' size={28} />
               <SearchInput placeholder='search' />
             </div>
             <div className="searchAddBox">

@@ -29,8 +29,8 @@ import styled from 'styled-components';
 
     .contents {
       display: flex;
-      margin-left: 20px;
       margin-top: 20px ;
+      margin-left: 20px;
       align-self:center;
       align-items: center;
 
@@ -48,17 +48,17 @@ import styled from 'styled-components';
         }
 
         .logo {
-          width: 18%;
-          margin-left: 12px;
+          width: 20%;
+          margin-left: 2px;
         }
 
         h1 {
-          display: none;
-
+          display: flex;
           font-size: 26px;
         }
 
         h3 {
+          display: none;
           font-size: large;
         }
 
@@ -68,7 +68,7 @@ import styled from 'styled-components';
 
     .control {
       display: flex;
-      margin-top: 20px;
+      margin-top: 18px;
       margin-bottom: 15px;
       margin-left: 20px;
       align-items: center;
@@ -82,6 +82,7 @@ import styled from 'styled-components';
         width: 100%;
         justify-content: space-between;
         margin: auto;
+        margin-top: 15px;
         align-items: center;
 
       }
@@ -89,8 +90,6 @@ import styled from 'styled-components';
       @media(max-width: 610px ){
         display: block;
         margin-left: 0;
-
-        svg { display: none; }
 
         button { margin: auto; }
 
@@ -108,6 +107,16 @@ import styled from 'styled-components';
       }
     }
 
+    .BackgroundSearch {
+      background: rgba(0, 0, 0, 0.27);
+      height: 50px;
+      padding-left: 6px;
+      padding-right: 6px;
+      min-width: fit-content;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 5px;
+    }
+
     .title {
       align-self: center;
       margin-left: 10px;
@@ -117,7 +126,8 @@ import styled from 'styled-components';
     display: flex;
     align-items: center;
     justify-content: start;
-    margin: 10px 10px;
+    margin: unset;
+    inline-size: -webkit-fill-available;
     }
 
     .spanCheckBox {
@@ -179,12 +189,13 @@ import styled from 'styled-components';
     height: 50px;
     width: auto;
     padding-left: 5px;
-    margin: 0 10px;
+    margin: 0 ;
     background: rgba(0, 0, 0, 0.27);
     font-size: 20px;
     color: #fff;
     border: 0;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 
   `;
 
