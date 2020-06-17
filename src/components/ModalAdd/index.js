@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Container } from './styles';
 import { FaPlus } from "react-icons/fa";
 
-export default function ModalAdd({ onModalAdd }) {
+export default function ModalAdd({ onModalAdd, onAddTool, title, link, description, tags, onChangeTitle, onChangeLink, onChangeDescription, onChangeTags }) {
 
   const useOutsideClick = (ref, callback) => {
 
@@ -32,19 +32,47 @@ export default function ModalAdd({ onModalAdd }) {
         <FaPlus style={{ marginRight: '5px' }} color="#f26532" size="25px" />
         <h2>Add New Tool</h2>
       </div>
+
+
       <h4 className="title" placeholder="" >Tool Name</h4>
-      <input type="text" placeholder="Tool title" />
+      <input
+        type="text"
+        placeholder="Tool title"
+        value={title}
+        onChange={onChangeTitle}
+      />
+
+
       <h4 className="title" >Tool Link</h4>
-      <input type="text" placeholder="Enter URL here" />
+      <input
+        type="text"
+        placeholder="Enter URL here"
+        value={link}
+        onChange={onChangeLink}
+      />
+
+
       <h4 className="title" >Tool Description</h4>
-      <textarea placeholder="Description of the tool..." />
+      <textarea
+        placeholder="Description of the tool..."
+        value={description}
+        onChange={onChangeDescription}
+      />
+
+
       <h4 className="title" >Tags</h4>
-      <input type="text" />
+      <input
+        type="text"
+        value={tags}
+        onChange={onChangeTags}
+      />
+
+
       <div className="button">
         <button className="addButton" onClick={onModalAdd} >
           <span>Cancel</span>
         </button>
-        <button className="addButton" onClick={onModalAdd} >
+        <button className="addButton" onClick={onAddTool} >
           <span>Add Tool</span>
         </button>
       </div>

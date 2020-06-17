@@ -15,11 +15,11 @@ function ToolItem({ tool, onDeleteModal }) {
       </div>
       <p>{tool.description}</p>
 
-        {
-          tool.tags.map(tag => (
-            <strong className="strongBlock">{`#${tag}\xa0\xa0`}</strong>
-          ))
-        }
+      {
+        tool.tags.map(tag => (
+          <strong className="strongBlock">{`#${tag}\xa0\xa0`}</strong>
+        ))
+      }
 
     </Item>
 

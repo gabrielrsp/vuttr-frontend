@@ -19,6 +19,11 @@ function Main() {
   const [tool, setTool] = useState([]);
   const [idClick, setIdClick] = useState(1);
 
+  const [newTitle, setNewTitle] = useState('');
+  const [newLink, setNewLink] = useState('');
+  const [newDescription, setNewDescription] = useState('');
+  const [newTags, setNewTags] = useState('');
+
   useEffect(() => {
     async function loadTools() {
       const response = await api.get('tools')
@@ -44,6 +49,38 @@ function Main() {
     setDeleteModal(!deleteModal)
     setIdClick(id)
   };
+
+  async function handleAddTool(e) {
+
+    if (!newTitle) {
+      e.preventDefault()
+      toast.error('Tool Name is Required');
+      return;
+    } else {
+
+      const response = await api.post('/tools', {
+
+        title: newTitle,
+        link: newLink,
+        description: newDescription,
+        tags: newTags.split(' ')
+
+      });
+
+      const { title, link, description, tags } = response.data;
+
+      const newTool = { title, link, description, tags }
+
+      setTool([...tool, newTool])
+      setNewTitle('');
+      setNewLink('');
+      setNewDescription('');
+      setNewTags('');
+      toggleModalAdd();
+      toast.success('New Tool Added');
+
+    }
+  }
 
   async function deleteTool() {
     await api.delete(`tools/${idClick}`)
@@ -165,7 +202,18 @@ function Main() {
           <>
             <Overlay>
               <ModalAdd
+
+                onAddTool={handleAddTool}
                 onModalAdd={toggleModalAdd}
+
+                onChangeTitle={e => setNewTitle(e.target.value)}
+
+                onChangeLink={e => setNewLink(e.target.value)}
+
+                onChangeDescription={e => setNewDescription(e.target.value)}
+
+                onChangeTags={e => setNewTags(e.target.value)}
+
               />
             </Overlay>
           </>
