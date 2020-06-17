@@ -43,6 +43,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-self: flex-end !important ;
+    margin: 20px 20px 10px;
   }
 
   .addButton {

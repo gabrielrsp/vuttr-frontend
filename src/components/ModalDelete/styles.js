@@ -34,7 +34,7 @@ export const Container = styled.div`
     display: flex;
     align-self: flex-start;
     align-items: center;
-    margin: 20px ;
+    margin: 20px 20px 10px;
   }
 
   .buttonBox {
