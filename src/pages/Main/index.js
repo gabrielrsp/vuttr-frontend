@@ -3,32 +3,71 @@ import { ToolList, Header, AddButton, SearchInput, CheckBoxInput, Overlay } from
 import { FaPlus, FaSearch, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-import ToolItem from '../../components/ToolItem';
-
+import logo from '../../assets/logo.svg';
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
-import logo from '../../assets/logo.svg';
+import ToolItem from '../../components/ToolItem';
+
+import api from '../../services/api';
 
 function Main() {
 
   const [overlay, setOverlay] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [tool, setTool] = useState([]);
+  const [idClick, setIdClick] = useState(1);
+  const [confirm, setConfirm] = useState(false);
+
+
+  useEffect(() => {
+    async function loadTools() {
+      const response = await api.get('tools')
+      setTool(response.data)
+
+    }
+    loadTools();
+  }, [idClick])
+
+
 
   const toggleOverlay = useCallback(() => {
     setOverlay(!overlay)
   }, [overlay]);
+
   const toggleModalAdd = useCallback(() => {
     toggleOverlay()
     setDeleteModal(false)
     setAddModal(!addModal)
   }, [addModal, toggleOverlay]);
 
-  const toggleModalDelete = useCallback(() => {
+
+
+  async function toggleModalDelete(id) {
+
     toggleOverlay()
     setAddModal(false)
     setDeleteModal(!deleteModal)
-  }, [deleteModal, toggleOverlay]);
+    setConfirm(false)
+
+    setIdClick(id)
+
+  };
+
+
+  async function deleteTool() {
+
+    await api.delete(`tools/${idClick}`)
+    setTool(tool.filter(tool => tool.id !== idClick))
+    toggleModalDelete();
+    setConfirm(false);
+
+    setIdClick(0);
+
+  }
+
+
+
 
   const useOutsideClick = (ref, callback) => {
 
@@ -110,20 +149,27 @@ function Main() {
       </Header>
 
       <ToolList>
-
-        <ToolItem onDelete={toggleModalDelete}/>
-
-        <ToolItem onDelete={toggleModalDelete}/>
-
-        <ToolItem onDelete={toggleModalDelete}/>
-
+        {
+          tool.map(tool => (
+            <>
+              <ToolItem
+                key={tool.id}
+                tool={tool}
+                onDeleteModal={() => toggleModalDelete(tool.id)}
+              />
+            </>
+          ))
+        }
       </ToolList>
 
       {
         overlay && deleteModal ?
           <>
             <Overlay>
-              <ModalDelete onModalDelete={toggleModalDelete} />
+              <ModalDelete
+                onModalDelete={toggleModalDelete}
+                onConfirmDelete={() => deleteTool()}
+              />
             </Overlay>
           </>
           : <></>
@@ -133,7 +179,9 @@ function Main() {
         overlay && addModal ?
           <>
             <Overlay>
-              <ModalAdd onModalAdd={toggleModalAdd} />
+              <ModalAdd
+                onModalAdd={toggleModalAdd}
+              />
             </Overlay>
           </>
           : <></>
