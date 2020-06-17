@@ -21,11 +21,17 @@ import styled from 'styled-components';
     width: 100%;
     background: #4d4d4d;
     padding: 0 10px;
+    position: sticky;
+  top: 0;
 
     img {
         border-radius: 5px;
         align-self: flex-start;
       }
+
+    @media(max-width: 610px ) {
+      position: unset;
+    }
 
     .contents {
       display: flex;
@@ -44,7 +50,7 @@ import styled from 'styled-components';
         }
 
         .profileName{
-            display: none;
+          display: none;
         }
 
         .logo {
@@ -114,8 +120,6 @@ import styled from 'styled-components';
           justify-content: flex-start;
           align-items: center;
           margin-bottom: 5px;
-
-
         }
 
         .spanCheckBox {
@@ -223,7 +227,12 @@ import styled from 'styled-components';
     display: block;
     border-radius: 4px;
     list-style-type: none;
-    margin-top: 30px;
+    margin-top: 25px;
+
+    @media(max-width: 610px ){
+      margin: auto;
+      margin-top: 15px;
+    }
 
   `;
 

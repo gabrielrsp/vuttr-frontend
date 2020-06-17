@@ -7,6 +7,7 @@ import logo from '../../assets/logo.svg';
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
 import ToolItem from '../../components/ToolItem';
+import { toast } from 'react-toastify';
 
 import api from '../../services/api';
 
@@ -17,8 +18,6 @@ function Main() {
   const [deleteModal, setDeleteModal] = useState(false);
   const [tool, setTool] = useState([]);
   const [idClick, setIdClick] = useState(1);
-  const [confirm, setConfirm] = useState(false);
-
 
   useEffect(() => {
     async function loadTools() {
@@ -28,8 +27,6 @@ function Main() {
     }
     loadTools();
   }, [idClick])
-
-
 
   const toggleOverlay = useCallback(() => {
     setOverlay(!overlay)
@@ -41,33 +38,21 @@ function Main() {
     setAddModal(!addModal)
   }, [addModal, toggleOverlay]);
 
-
-
   async function toggleModalDelete(id) {
-
     toggleOverlay()
     setAddModal(false)
     setDeleteModal(!deleteModal)
-    setConfirm(false)
-
     setIdClick(id)
-
   };
 
-
   async function deleteTool() {
-
     await api.delete(`tools/${idClick}`)
     setTool(tool.filter(tool => tool.id !== idClick))
     toggleModalDelete();
-    setConfirm(false);
-
     setIdClick(0);
+    toast.success('Tool Removed');
 
   }
-
-
-
 
   const useOutsideClick = (ref, callback) => {
 

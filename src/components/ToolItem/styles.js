@@ -48,9 +48,15 @@ export const Item = styled.li`
     font-size: 20px;
   }
 
+  .strongBlock {
+    display: inline-block;
+  }
+
   strong {
     margin-bottom: 15px;
     font-size: 18px;
+
+
   }
 
 
