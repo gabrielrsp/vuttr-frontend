@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
+import ModalEdit from '../../components/ModalEdit';
 import ToolItem from '../../components/ToolItem';
 import { toast } from 'react-toastify';
 
@@ -14,8 +15,11 @@ import api from '../../services/api';
 function Main() {
 
   const [overlay, setOverlay] = useState(false);
+
   const [addModal, setAddModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+
   const [tool, setTool] = useState([]);
   const [idClick, setIdClick] = useState(1);
 
@@ -28,7 +32,6 @@ function Main() {
     async function loadTools() {
       const response = await api.get('tools')
       setTool(response.data)
-
     }
     loadTools();
   }, [idClick])
@@ -40,15 +43,9 @@ function Main() {
   const toggleModalAdd = useCallback(() => {
     toggleOverlay()
     setDeleteModal(false)
+    setEditModal(false)
     setAddModal(!addModal)
   }, [addModal, toggleOverlay]);
-
-  async function toggleModalDelete(id) {
-    toggleOverlay()
-    setAddModal(false)
-    setDeleteModal(!deleteModal)
-    setIdClick(id)
-  };
 
   async function handleAddTool(e) {
 
@@ -59,12 +56,10 @@ function Main() {
     } else {
 
       const response = await api.post('/tools', {
-
         title: newTitle,
         link: newLink,
         description: newDescription,
-        tags: newTags.split(' ')
-
+        tags: newTags.split(' ').filter(Boolean)
       });
 
       const { title, link, description, tags } = response.data;
@@ -77,21 +72,86 @@ function Main() {
       setNewDescription('');
       setNewTags('');
       toggleModalAdd();
+      setIdClick('');
       toast.success('New Tool Added');
 
     }
   }
 
-  async function deleteTool() {
-    await api.delete(`tools/${idClick}`)
-    setTool(tool.filter(tool => tool.id !== idClick))
-    toggleModalDelete();
-    setIdClick(0);
-    toast.success('Tool Removed');
+  function openEditModal(id) {
+    toggleOverlay()
+    setDeleteModal(false)
+    setAddModal(false)
+    setEditModal(true)
+    setIdClick(id)
+
+    let toolEdit = tool.filter(tool => { return tool.id === id; })
+    const { title, link, description, tags } = toolEdit[0]
+
+    setNewTitle(title);
+    setNewLink(link);
+    setNewDescription(description);
+    setNewTags(tags.toString().split(',').join(' '));
+
+  };
+
+  async function handleUpdateTool() {
+    if (!newTitle) {
+      toast.error('Tool Name is Required');
+    } else {
+
+      const response = await api.put(`tools/${idClick}`, {
+        title: newTitle,
+        link: newLink,
+        description: newDescription,
+        tags: newTags.split(' ').filter(Boolean)
+      });
+
+      const { title, link, description, tags } = response.data;
+
+      const newTool = { title, link, description, tags };
+      const newTools = tool
+      const toolIndex = tool.findIndex(tool => tool.id === idClick)
+
+      newTools[toolIndex] = newTool;
+
+      setTool(newTools)
+
+      setNewTitle('');
+      setNewLink('');
+      setNewDescription('');
+      setNewTags('');
+      setIdClick('')
+      closeEditModal()
+    }
 
   }
 
-  const useOutsideClick = (ref, callback) => {
+  async function closeEditModal() {
+    toggleOverlay()
+    setAddModal(false)
+    setEditModal(false)
+    setDeleteModal(false)
+
+  };
+
+  async function toggleDeleteModal(id) {
+    toggleOverlay()
+    setAddModal(false)
+    setEditModal(false)
+    setDeleteModal(!deleteModal)
+    setIdClick(id)
+  };
+
+  async function deleteTool() {
+    await api.delete(`tools/${idClick}`)
+    setTool(tool.filter(tool => tool.id !== idClick))
+    toggleDeleteModal();
+    setIdClick(0);
+    toast.success('Tool Removed');
+  }
+
+    const useOutsideClick = (ref, callback) => {
 
     const handleClick = e => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -161,10 +221,12 @@ function Main() {
                 <CheckBoxInput type='checkbox' />
                 <span className="spanCheckBox" >search in tags only</span>
               </div>
-              <AddButton onClick={toggleModalAdd}  >
-                <FaPlus color='#fff' size='25px' />
-                <span>Add</span>
-              </AddButton>
+              <div>
+                <AddButton className="addButton" onClick={toggleModalAdd}  >
+                  <FaPlus color='#fff' size='25px' />
+                  <span>Add</span>
+                </AddButton>
+              </div>
             </div>
           </div>
         </div>
@@ -177,7 +239,8 @@ function Main() {
               <ToolItem
                 key={tool.id}
                 tool={tool}
-                onDeleteModal={() => toggleModalDelete(tool.id)}
+                onDeleteModal={() => toggleDeleteModal(tool.id)}
+                onEditModal={() => openEditModal(tool.id)}
               />
             </>
           ))
@@ -189,7 +252,7 @@ function Main() {
           <>
             <Overlay>
               <ModalDelete
-                onModalDelete={toggleModalDelete}
+                onDeleteModal={toggleDeleteModal}
                 onConfirmDelete={() => deleteTool()}
               />
             </Overlay>
@@ -202,18 +265,33 @@ function Main() {
           <>
             <Overlay>
               <ModalAdd
-
                 onAddTool={handleAddTool}
-                onModalAdd={toggleModalAdd}
-
+                onAddModal={toggleModalAdd}
                 onChangeTitle={e => setNewTitle(e.target.value)}
-
                 onChangeLink={e => setNewLink(e.target.value)}
-
                 onChangeDescription={e => setNewDescription(e.target.value)}
-
                 onChangeTags={e => setNewTags(e.target.value)}
+              />
+            </Overlay>
+          </>
+          : <></>
+      }
 
+      {
+        overlay && editModal ?
+          <>
+            <Overlay>
+              <ModalEdit
+                onCloseEditModal={closeEditModal}
+                onUpdateTool={handleUpdateTool}
+                onChangeTitle={e => setNewTitle(e.target.value)}
+                onChangeLink={e => setNewLink(e.target.value)}
+                onChangeDescription={e => setNewDescription(e.target.value)}
+                onChangeTags={e => setNewTags(e.target.value)}
+                title={newTitle}
+                link={newLink}
+                description={newDescription}
+                tags={newTags}
               />
             </Overlay>
           </>

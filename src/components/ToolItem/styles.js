@@ -1,28 +1,19 @@
 import styled from 'styled-components';
 
-  export const DeleteButton = styled.div`
+  export const Button = styled.div`
   display: flex;
-  color: #F95E5A;
   margin-top: 15px;
+  margin-left: 20px;
   font-weight: bold;
   font-size: 20px;
+  cursor:pointer;
 
   span {
     margin-top: 2px;
   }
-
-  &:hover {
-    color: #CC4C4C;
-  }
-  &:active {
-      color: #A53F3F;
-  }
-  cursor:pointer;
-
 `;
 
 export const Item = styled.li`
-
   width: 100%;
   align-content: center;
   padding: 0px 15px 20px;
@@ -31,9 +22,38 @@ export const Item = styled.li`
   border: 0;
   border-radius: 4px;
 
+  .buttons {
+    display:flex;
+  }
+
   .flex{
     display: flex;
     justify-content: space-between;
+
+    .editItem {
+      span {
+        color: #FFBB43;
+        &:hover {
+          color: #ffab1a;
+        }
+        &:active {
+            color: #e69100;
+        }
+      }
+    }
+
+    .deleteItem {
+      span {
+        color: #F95E5A;
+        &:hover {
+          color: #CC4C4C;
+        }
+        &:active {
+            color: #A53F3F;
+        }
+      }
+    }
+
   }
 
   a {
@@ -55,9 +75,6 @@ export const Item = styled.li`
   strong {
     margin-bottom: 15px;
     font-size: 18px;
-
-
   }
-
 
 `;

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Container } from './styles';
 import { FaTimes } from "react-icons/fa";
 
-export default function ModalDelete({ onModalDelete, onConfirmDelete }) {
+export default function ModalDelete({ onDeleteModal, onConfirmDelete }) {
 
   const useOutsideClick = (ref, callback) => {
     const handleClick = e => {
@@ -22,7 +22,7 @@ export default function ModalDelete({ onModalDelete, onConfirmDelete }) {
   const ref = useRef();
 
   useOutsideClick(ref, () => {
-    onModalDelete()
+    onDeleteModal()
   });
 
   return (
@@ -35,7 +35,7 @@ export default function ModalDelete({ onModalDelete, onConfirmDelete }) {
         <h3>Want to delete this tool?</h3>
       </div>
       <div className='buttonBox'>
-        <button onClick={onModalDelete} >
+        <button onClick={onDeleteModal} >
           <span>Cancel</span>
         </button>
         <button onClick={onConfirmDelete} >

@@ -22,7 +22,7 @@ import styled from 'styled-components';
     background: #4d4d4d;
     padding: 0 10px;
     position: sticky;
-  top: 0;
+    top: 0;
 
     img {
         border-radius: 5px;
