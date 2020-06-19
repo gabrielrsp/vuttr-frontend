@@ -16,11 +16,11 @@ import styled from 'styled-components';
 export const Item = styled.li`
   width: 100%;
   align-content: center;
-  padding: 0px 15px 20px;
+  padding: 0 15px 5px;
   margin-bottom: 13px;
   background: rgba(243,243,243,0.72);
   border: 0;
-  border-radius: 4px;
+  border-radius: 5px;
 
   .buttons {
     display:flex;
@@ -59,12 +59,12 @@ export const Item = styled.li`
   a {
     padding-top: 10px;
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #f26532;
   }
 
   p {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     font-size: 20px;
   }
 
@@ -73,7 +73,7 @@ export const Item = styled.li`
   }
 
   strong {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 18px;
   }
 

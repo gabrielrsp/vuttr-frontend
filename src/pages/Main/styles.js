@@ -264,25 +264,3 @@ import styled from 'styled-components';
 
   `;
 
-  export const DeleteButton = styled.div`
-    display: flex;
-    color: #F95E5A;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 20px;
-
-    span {
-      margin-top: 2px;
-    }
-
-    &:hover {
-      color: #CC4C4C;
-    }
-    &:active {
-        color: #A53F3F;
-    }
-    cursor:pointer;
-
-  `;
-
-

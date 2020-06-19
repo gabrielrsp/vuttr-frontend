@@ -27,6 +27,9 @@ function Main() {
   const [newLink, setNewLink] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [newTags, setNewTags] = useState('');
+  const [checkBox, setCheckBox] = useState(false);
+
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     async function loadTools() {
@@ -35,6 +38,11 @@ function Main() {
     }
     loadTools();
   }, [idClick])
+
+
+  function toggleCheckBox() {
+    setCheckBox(!checkBox)
+  }
 
   const toggleOverlay = useCallback(() => {
     setOverlay(!overlay)
@@ -151,7 +159,7 @@ function Main() {
     toast.success('Tool Removed');
   }
 
-    const useOutsideClick = (ref, callback) => {
+  const useOutsideClick = (ref, callback) => {
 
     const handleClick = e => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -214,11 +222,11 @@ function Main() {
           <div className="control">
             <div className="inputBar">
               <FaSearch className="BackgroundSearch logoSearch" color='#f26532' size={28} />
-              <SearchInput placeholder='search' />
+              <SearchInput placeholder='search' value={filter} onChange={(e) => setFilter(e.target.value)} />
             </div>
             <div className="searchAddBox">
               <div className="checkBoxContainer" >
-                <CheckBoxInput type='checkbox' />
+                <CheckBoxInput type='checkbox' onClick={toggleCheckBox} />
                 <span className="spanCheckBox" >search in tags only</span>
               </div>
               <div>
@@ -233,17 +241,51 @@ function Main() {
       </Header>
 
       <ToolList>
+
         {
-          tool.map(tool => (
-            <>
-              <ToolItem
-                key={tool.id}
-                tool={tool}
-                onDeleteModal={() => toggleDeleteModal(tool.id)}
-                onEditModal={() => openEditModal(tool.id)}
-              />
-            </>
-          ))
+          filter.trim() ?
+
+            checkBox ?
+
+              tool.filter(tool => (tool.tags.toString().toLowerCase().includes(filter.toLowerCase().trim())))
+                .map(tool => (
+                  <>
+                    <ToolItem
+                      key={tool.id}
+                      tool={tool}
+                      onDeleteModal={() => toggleDeleteModal(tool.id)}
+                      onEditModal={() => openEditModal(tool.id)}
+                    />
+                  </>
+                ))
+
+              :
+
+              tool.filter(tool => (tool.title.toLowerCase().startsWith(filter.toLowerCase().trim())))
+                .map(tool => (
+                  <>
+                    <ToolItem
+                      key={tool.id}
+                      tool={tool}
+                      onDeleteModal={() => toggleDeleteModal(tool.id)}
+                      onEditModal={() => openEditModal(tool.id)}
+                    />
+                  </>
+                ))
+
+
+            :
+
+            tool.map(tool => (
+              <>
+                <ToolItem
+                  key={tool.id}
+                  tool={tool}
+                  onDeleteModal={() => toggleDeleteModal(tool.id)}
+                  onEditModal={() => openEditModal(tool.id)}
+                />
+              </>
+            ))
         }
       </ToolList>
 
