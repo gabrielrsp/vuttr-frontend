@@ -181,17 +181,28 @@ export default function Main() {
   let modalListener = (event) => {
 
     if (event.keyCode === 27) {
+
       if (addModal === true) {
         setOverlay(false)
         setAddModal(false)
+        setEditModal(false)
         window.removeEventListener("keydown", modalListener);
       }
 
       if (deleteModal === true) {
         setOverlay(false)
         setDeleteModal(false)
+        setEditModal(false)
         window.removeEventListener("keydown", modalListener);
       }
+
+      if (editModal === true) {
+        setOverlay(false)
+        setAddModal(false)
+        setDeleteModal(false)
+        window.removeEventListener("keydown", modalListener);
+      }
+
     }
   }
   window.addEventListener("keydown", modalListener);
@@ -306,4 +317,3 @@ export default function Main() {
     </>
   );
 }
-
