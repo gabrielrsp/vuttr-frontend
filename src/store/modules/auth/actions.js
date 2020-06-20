@@ -5,7 +5,7 @@ export function signInRequest(email, password) {
   };
 }
 
-export function signInSuccess(token, user){
+export function signInSuccess(token, user) {
   return {
     type: '@auth/SIGN_IN_SUCCESS',
     payload: { token, user },
@@ -20,13 +20,13 @@ export function signUpRequest(name, email, password) {
 }
 
 export function signFailure() {
-  return{
+  return {
     type: '@auth/SIGN_FAILURE',
   };
 }
 
 export function signOut() {
-  return{
+  return {
     type: '@auth/SIGN_OUT',
   };
 }

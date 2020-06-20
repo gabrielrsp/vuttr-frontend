@@ -1,23 +1,18 @@
-//MENU SEM HEADER
-
-
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+
+import { toast } from 'react-toastify';
 import { ToolList, Overlay } from './styles';
 
+import api from '../../services/api';
 import Header from '../../components/Header';
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
 import ModalEdit from '../../components/ModalEdit';
 import ToolItem from '../../components/ToolItem';
-import { toast } from 'react-toastify';
 
-import api from '../../services/api';
-
-function Main() {
+export default function Main() {
 
   const [overlay, setOverlay] = useState(false);
-
   const [addModal, setAddModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
@@ -29,8 +24,8 @@ function Main() {
   const [newLink, setNewLink] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [newTags, setNewTags] = useState('');
-  const [checkBox, setCheckBox] = useState(false);
 
+  const [checkBox, setCheckBox] = useState(false);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -242,8 +237,6 @@ function Main() {
                     />
                   </>
                 ))
-
-
             :
 
             tool.map(tool => (
@@ -314,4 +307,3 @@ function Main() {
   );
 }
 
-export default Main;

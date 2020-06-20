@@ -14,7 +14,6 @@ export function* signIn({ payload }) {
       password
     });
 
-
     const { token, user } = response.data;
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
@@ -30,7 +29,7 @@ export function* signIn({ payload }) {
 
     else
 
-    toast.error('Failed to Authenticate');
+      toast.error('Failed to Authenticate');
     yield put(signFailure());
   }
 }
@@ -52,7 +51,6 @@ export function* signUp({ payload }) {
     yield put(signFailure());
   }
 }
-
 
 export function setToken({ payload }) {
   if (!payload) return;
