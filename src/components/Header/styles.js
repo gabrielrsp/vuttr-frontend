@@ -129,11 +129,11 @@ import styled from 'styled-components';
 
 
   .checkBoxContainer {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  margin-left: 10px;
-  inline-size: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 10px;
+    width: 100%;
   }
 
   .spanCheckBox {

@@ -24,10 +24,12 @@ export default function Profile() {
   return (
     <div id="profile" >
       <Container >
-        <Link to="/main">
-          <FaArrowCircleLeft className="logoLeft" color='#f26532' size={28} />
-        </Link>
-        <h1>Profile Settings</h1>
+        <div className="title" >
+          <Link to="/main">
+            <FaArrowCircleLeft className="logoLeft" color='#f26532' size={28} />
+          </Link>
+          <h1>Profile Settings</h1>
+        </div>
         <Form initialData={profile} onSubmit={handleSubmit} >
           <Input name="name" placeholder="First name" />
           <Input name="email" type="email" placeholder="Email Adress" />

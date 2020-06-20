@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
 
+export const Container = styled.div`
   max-width: 600px;
   margin: 0 10px;
 
   h1 {
     color: #f26532;
     margin-top: 5px;
+    width: 100%;
   }
 
   .logoLeft{
     display: flex;
     margin-right: auto;
+  }
+
+  .title{
+    display: flex;
   }
 
   form {
