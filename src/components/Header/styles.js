@@ -23,7 +23,6 @@ import styled from 'styled-components';
   .contents {
     display: flex;
     margin-top: 20px ;
-    margin-left: 20px;
     align-self:center;
     align-items: center;
 
@@ -63,7 +62,7 @@ import styled from 'styled-components';
     display: flex;
     margin-top: 18px;
     margin-bottom: 15px;
-    margin-left: 20px;
+
     align-items: center;
 
     .inputBar{
