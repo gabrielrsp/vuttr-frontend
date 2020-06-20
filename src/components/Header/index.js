@@ -1,9 +1,6 @@
-//COMPONENTE HEADER
-
-
-
 import React from 'react';
 
+import { useSelector } from 'react-redux';
 import { Container, AddButton, SearchInput, CheckBoxInput } from './styles';
 import { FaPlus, FaSearch, FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -11,6 +8,9 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
 export default function Header({ filterValue, onChangeFilterValue, onToggleCheckBox, onToggleModalAdd }) {
+
+  const profile = useSelector(state => state.user.profile);
+
   return (
 
     <Container>
@@ -22,7 +22,7 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
         </div>
         <div className="profile" >
           <div className="profileName">
-            <Link to="/profile">Gabriel Rodrigues</Link>
+            <Link to="/profile">Hello, {profile.name.trim().split(" ")[0]}!</Link>
           </div  >
           <Link to="/profile">
             <FaUserCircle color='#f26532' size={32} />
