@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ToolList, Header, AddButton, SearchInput, CheckBoxInput, Overlay } from './styles';
-import { FaPlus, FaSearch, FaUserCircle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+//MENU SEM HEADER
 
-import logo from '../../assets/logo.svg';
+
+
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ToolList, Overlay } from './styles';
+
+import Header from '../../components/Header';
 import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
 import ModalEdit from '../../components/ModalEdit';
@@ -201,44 +203,12 @@ function Main() {
 
   return (
     <>
-      <Header>
-        <div>
-          <div className="contents">
-            <img className="logo" src={logo} alt="vuttr" width={'12%'} />
-            <div className="title" >
-              <h1>VUTTR</h1>
-              <h3>Very Useful Tools to Remember</h3>
-            </div>
-            <div className="profile" >
-              <div className="profileName">
-                <Link to="/profile">Gabriel Rodrigues</Link>
-              </div  >
-              <Link to="/profile">
-                <FaUserCircle color='#f26532' size={32} />
-              </Link>
-            </div>
-          </div>
-
-          <div className="control">
-            <div className="inputBar">
-              <FaSearch className="BackgroundSearch logoSearch" color='#f26532' size={28} />
-              <SearchInput placeholder='search' value={filter} onChange={(e) => setFilter(e.target.value)} />
-            </div>
-            <div className="searchAddBox">
-              <div className="checkBoxContainer" >
-                <CheckBoxInput type='checkbox' onClick={toggleCheckBox} />
-                <span className="spanCheckBox" >search in tags only</span>
-              </div>
-              <div>
-                <AddButton className="addButton" onClick={toggleModalAdd}  >
-                  <FaPlus color='#fff' size='25px' />
-                  <span>Add</span>
-                </AddButton>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Header>
+      <Header
+        filterValue={filter}
+        onChangeFilterValue={(e) => setFilter(e.target.value)}
+        onToggleCheckBox={toggleCheckBox}
+        onToggleModalAdd={toggleModalAdd}
+      />
 
       <ToolList>
 

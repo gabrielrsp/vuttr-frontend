@@ -16,7 +16,7 @@ import styled from 'styled-components';
 export const Item = styled.li`
   width: 100%;
   align-content: center;
-  padding: 0 15px 5px;
+  padding: 5px 15px 10px;
   margin-bottom: 13px;
   background: rgba(243,243,243,0.72);
   border: 0;
