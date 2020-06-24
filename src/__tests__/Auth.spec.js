@@ -49,7 +49,6 @@ describe('Signup Dispatch function', () => {
           "type": "@auth/SIGN_UP_REQUEST"
         })
     })
-
   });
 });
 

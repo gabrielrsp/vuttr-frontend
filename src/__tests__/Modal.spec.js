@@ -5,7 +5,7 @@ import ModalAdd from '../components/ModalAdd';
 import ModalEdit from '../components/ModalEdit';
 
 describe('ModalAdd component', () => {
-  it('should render modal add input fields component', () => {
+  it('should render add input fields ', () => {
     const { getByPlaceholderText } = render(<ModalAdd />)
     getByPlaceholderText('Tool title');
     getByPlaceholderText('Enter URL here');
@@ -15,7 +15,7 @@ describe('ModalAdd component', () => {
 })
 
 describe('ModalEdit component', () => {
-  it('should render modal edit input fields component', () => {
+  it('should render edit input fields', () => {
     const { getByPlaceholderText } = render(<ModalEdit />)
     getByPlaceholderText('Tool title');
     getByPlaceholderText('Enter URL here');
