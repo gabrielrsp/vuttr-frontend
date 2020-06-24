@@ -21,8 +21,8 @@ export function* signIn({ payload }) {
 
     history.push('/main');
   } catch (err) {
-    const manyreq = err.toString();
-    if (manyreq.includes('429')) {
+    const requests = err.toString();
+    if (requests.includes('429')) {
       toast.error('You have entered wrong credentials many times. Try again later');
       yield put(signFailure());
     }

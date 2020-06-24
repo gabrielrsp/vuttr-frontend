@@ -23,7 +23,8 @@ export const Item = styled.li`
   border-radius: 5px;
 
   &:hover {
-    background: rgba(255,255,255,0.79);
+    background: rgba(255,255,255,0.9);
+    transition: 0.33s;
   }
 
   .buttons {
