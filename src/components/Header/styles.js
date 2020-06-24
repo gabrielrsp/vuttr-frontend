@@ -72,7 +72,6 @@ import styled from 'styled-components';
       margin: auto;
       margin-top: 15px;
       align-items: center;
-
     }
 
     @media(max-width: 610px ){
@@ -97,7 +96,6 @@ import styled from 'styled-components';
 
       }
 
-
       .inputBar{
         display: flex;
         justify-content: flex-start;
@@ -106,7 +104,7 @@ import styled from 'styled-components';
       }
 
       .spanCheckBox {
-        font-size: medium;
+        font-size: 18px;
       }
     }
   }
@@ -135,7 +133,7 @@ import styled from 'styled-components';
   }
 
   .spanCheckBox {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
     color: #f26532;
   }
