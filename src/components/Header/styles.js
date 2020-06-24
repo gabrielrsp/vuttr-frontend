@@ -51,9 +51,7 @@ import styled from 'styled-components';
         display: none;
         font-size: large;
       }
-
     }
-
   }
 
   .control {
@@ -99,6 +97,7 @@ import styled from 'styled-components';
 
       }
 
+
       .inputBar{
         display: flex;
         justify-content: flex-start;
@@ -126,7 +125,6 @@ import styled from 'styled-components';
     align-self: center;
     margin-left: 10px;
   }
-
 
   .checkBoxContainer {
     display: flex;

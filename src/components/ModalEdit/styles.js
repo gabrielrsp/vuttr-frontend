@@ -100,6 +100,13 @@ export const Container = styled.div`
     height: 30px;
     padding: 18px;
     margin: 10px;
+
+    &:focus {
+      border: 1px solid #FFBB43;
+      margin: 9px;
+      }
+
+
   }
 
   .title {
@@ -135,9 +142,13 @@ export const Container = styled.div`
     padding: 10px 15px 60px 10px;
     width: 90%;
     height: 200px;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 9px;
     resize: none;
+
+    &:focus {
+      border: 1px solid #FFBB43;
+      margin: 9px;
+      }
 
     &::placeholder {
       font-size: 14px;

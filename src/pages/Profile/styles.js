@@ -36,6 +36,12 @@ export const Container = styled.div`
       padding: 15px;
       margin: 5px 0 8px;
       font-size: 15px;
+
+      &:focus {
+      border: 1px solid #f26532;
+      margin: 4px -1 7px;
+      }
+
     }
 
     hr {

@@ -22,6 +22,10 @@ export const Item = styled.li`
   border: 0;
   border-radius: 5px;
 
+  &:hover {
+    background: rgba(255,255,255,0.79);
+  }
+
   .buttons {
     display:flex;
   }
@@ -61,6 +65,13 @@ export const Item = styled.li`
     font-size: 30px;
     margin-bottom: 15px;
     color: #f26532;
+
+    &:hover {
+        color: #f04b0f;
+      }
+      &:active {
+        color: #c03c0c;
+      }
   }
 
   p {
