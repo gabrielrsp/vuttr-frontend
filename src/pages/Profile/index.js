@@ -32,7 +32,7 @@ export default function Profile() {
         </div>
         <Form initialData={profile} onSubmit={handleSubmit} >
           <Input name="name" placeholder="First name" />
-          <Input name="email" type="email" placeholder="Email Adress" />
+          <Input name="email" type="email" placeholder="Email Address" />
           <hr />
           <Input type="password" name="oldPassword" placeholder="Current password" />
           <Input type="password" name="password" placeholder="New password" />

@@ -16,7 +16,7 @@ jest.mock('react-router-dom', () => {
     }),
     Link: ({ children }) => children
   };
-})
+});
 
 jest.mock('react-redux', () => {
   return {
@@ -24,7 +24,7 @@ jest.mock('react-redux', () => {
     useDispatch: () => mockedDispatch,
     Provider: ({ children }) => children
   };
-})
+});
 
 describe('Signup Dispatch function', () => {
   it('should be able to dispatch signup action', async () => {
@@ -41,10 +41,17 @@ describe('Signup Dispatch function', () => {
 
     fireEvent.click(buttonElement)
 
-    await wait(() => { expect(mockedDispatch).toHaveBeenCalledWith({ "payload": { "name": "john", "email": "johndoe@example.com", "password": "123456" }, "type": "@auth/SIGN_UP_REQUEST" }) })
+    await wait(() => {
+      expect(mockedDispatch).toHaveBeenCalledWith(
+        {
+          "payload":
+            { "name": "john", "email": "johndoe@example.com", "password": "123456" },
+          "type": "@auth/SIGN_UP_REQUEST"
+        })
+    })
 
-  })
-})
+  });
+});
 
 describe('Signin Dispatch function', () => {
   it('should be able to dispatch signin action', async () => {
@@ -60,15 +67,14 @@ describe('Signin Dispatch function', () => {
     fireEvent.click(buttonElement)
     await wait(() => { expect(mockedDispatch).toHaveBeenCalledWith({ "payload": { "email": "johndoe@example.com", "password": "123456" }, "type": "@auth/SIGN_IN_REQUEST" }) })
 
-  })
-})
+  });
+});
 
-describe('Signin Reducer', () => {
-  it('should sign in request setting loading state to true', () => {
-    const state = reducer(INITIAL_STATE, AUTH.signInRequest({ email: 'john@doe.com', password: '123456' }))
-
+describe('Signin Request Reducer', () => {
+  it('should call signin reducer changing loading state to true', () => {
+    const state = reducer(INITIAL_STATE, AUTH.signInRequest())
     expect(state).toStrictEqual({ "loading": true, "signed": false, "token": null })
-  })
-})
+  });
+});
 
 

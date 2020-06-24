@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-  export const Container = styled.div`
+  export const Container = styled.header`
   display: grid;
   justify-content: center ;
   width: 100%;

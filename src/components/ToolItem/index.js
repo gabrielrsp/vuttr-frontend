@@ -6,7 +6,7 @@ function ToolItem({ tool, onDeleteModal, onEditModal }) {
 
   return (
     <Item >
-      <div className="flex">
+      <div data-testid="tool-item" className="flex">
         <a href={tool.link}> {tool.title}</a>
         <div className="buttons">
           <Button className="editItem" onClick={onEditModal} >
