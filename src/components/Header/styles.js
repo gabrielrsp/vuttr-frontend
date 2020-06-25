@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
   export const Container = styled.header`
-
-  display: flex;
+  display: grid;
   justify-content: center ;
   width: 100%;
   background: #4d4d4d;
-  padding: auto;
+  padding: 0 10px;
   position: sticky;
   top: 0;
-
-
 
   img {
       border-radius: 5px;
@@ -18,7 +15,7 @@ import styled from 'styled-components';
     }
 
   @media(max-width: 610px ) {
-    position: sticky;
+    position: unset;
   }
 
   .contents {
@@ -66,7 +63,6 @@ import styled from 'styled-components';
 
     .inputBar{
       display: contents;
-      width: auto;
     }
 
     .searchAddBox {
@@ -84,7 +80,7 @@ import styled from 'styled-components';
 
       button { margin: auto; }
 
-      input { width: auto; }
+      input { width: -webkit-fill-available; }
 
       .checkBoxContainer {
         margin: unset;
@@ -95,7 +91,6 @@ import styled from 'styled-components';
         width: 100%;
         justify-content: space-between;
         margin: auto;
-        padding: 0 8px;
         margin-top: 15px;
         align-items: center;
 
@@ -105,11 +100,7 @@ import styled from 'styled-components';
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin: auto;
-        width: auto;
         margin-bottom: 5px;
-        display: flex;
-        place-content: center ;
       }
 
       .spanCheckBox {
