@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
   export const Container = styled.header`
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 0 20px;
-  background: #009999;
-  padding: 0 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 4px;
+  display: flex;
+  justify-content: center ;
+  width: 100%;
+  background: #4d4d4d;
+  padding: 0 10px;
   position: sticky;
   top: 0;
 
@@ -66,6 +63,7 @@ import styled from 'styled-components';
 
     .inputBar{
       display: contents;
+      width: auto;
     }
 
     .searchAddBox {
@@ -83,7 +81,7 @@ import styled from 'styled-components';
 
       button { margin: auto; }
 
-      input { width: -webkit-fill-available; }
+      input { width: auto; }
 
       .checkBoxContainer {
         margin: unset;
