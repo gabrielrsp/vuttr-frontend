@@ -7,7 +7,7 @@ function ToolItem({ tool, onDeleteModal, onEditModal }) {
   return (
     <Item >
       <div id="controlItem" className="flex">
-        <a href={`http://${tool.link}`}>{tool.title}</a>
+        <a href={`${tool.link}`}>{tool.title}</a>
         <div className="buttons">
           <Button className="editItem" onClick={onEditModal} >
             <FaEdit color="#FFBB43" size="25px" />
