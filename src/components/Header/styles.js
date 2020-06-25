@@ -15,7 +15,7 @@ import styled from 'styled-components';
     }
 
   @media(max-width: 610px ) {
-    position: unset;
+    position: sticky;
   }
 
   .contents {
