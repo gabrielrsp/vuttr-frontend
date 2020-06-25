@@ -13,6 +13,9 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
 
   return (
     <Container>
+      <div>
+
+
       <div className="contents">
         <img className="logo" src={logo} alt="vuttr" width={'12%'} />
         <div className="title" >
@@ -45,6 +48,7 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
             </AddButton>
           </div>
         </div>
+      </div>
       </div>
     </Container>
   );
