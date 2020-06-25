@@ -33,15 +33,7 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
         <h2>Add New Tool</h2>
       </div>
 
-      <h4 className="title" placeholder="" >Tool Name</h4>
-      <input type="text" placeholder="Tool title" onChange={onChangeTitle} />
 
-
-      <h4 className="title" >Tool Description</h4>
-      <textarea placeholder="Description of the tool..." onChange={onChangeDescription} />
-
-      <h4 className="title" >Tags</h4>
-      <input type="text" placeholder="Tags" onChange={onChangeTags} />
 
       <div className="button">
         <button className="addButton" onClick={onAddModal} >
