@@ -16,6 +16,18 @@ import styled from 'styled-components';
 
   @media(max-width: 610px ) {
     position: sticky;
+
+
+          /* TESTE */
+          width: 100%;
+      align-content: center;
+      padding: 5px 15px 10px;
+      margin-bottom: 13px;
+      border: 0;
+      border-radius: 5px;
+
+
+
   }
 
   .contents {
@@ -78,16 +90,16 @@ import styled from 'styled-components';
       display: block;
       margin-left: 0;
 
-      width: auto;
-      margin:  auto;
-      padding: 0 ;
-      position: sticky;
-      top: 0;
+      /* TESTE */
+      width: 100%;
+      align-content: center;
+      padding: 5px 15px 10px;
+      margin-bottom: 13px;
+      border: 0;
+      border-radius: 5px;
 
 
       button { margin: auto; }
-
-      input { width: -webkit-fill-available; }
 
       .checkBoxContainer {
         margin: unset;
