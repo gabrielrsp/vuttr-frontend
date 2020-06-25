@@ -52,6 +52,7 @@ export const Item = styled.li`
     display: flex;
     justify-content: space-between;
 
+
     .editItem {
       span {
         color: #FFBB43;

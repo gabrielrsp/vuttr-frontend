@@ -65,6 +65,18 @@ import styled from 'styled-components';
       display: contents;
     }
 
+    #faSearch {
+      color: #f26532;
+      width: 60px;
+      background: rgba(0, 0, 0, 0.27);
+      height: 50px;
+      padding-left: 6px;
+      padding-right: 6px;
+      min-width: fit-content;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 5px;
+    }
+
     .searchAddBox {
       display: contents;
       width: 100%;
@@ -91,7 +103,6 @@ import styled from 'styled-components';
         margin: auto;
         margin-top: 15px;
         align-items: center;
-
       }
 
       .inputBar{
@@ -105,16 +116,6 @@ import styled from 'styled-components';
         font-size: 18px;
       }
     }
-  }
-
-  .BackgroundSearch {
-    background: rgba(0, 0, 0, 0.27);
-    height: 50px;
-    padding-left: 6px;
-    padding-right: 6px;
-    min-width: fit-content;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 5px;
   }
 
   .title {
@@ -187,7 +188,7 @@ export const CheckBoxInput = styled.input`
 
 export const SearchInput = styled.input`
   height: 50px;  display: block;
-      margin-left: 0;
+  margin-left: 0;
   width: auto;
   padding-left: 5px;
   margin: 0 ;

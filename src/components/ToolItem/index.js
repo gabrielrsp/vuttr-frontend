@@ -14,7 +14,7 @@ function ToolItem({ tool, onDeleteModal, onEditModal }) {
             <span>Edit</span>
           </Button >
           <Button className="deleteItem" onClick={onDeleteModal} >
-            <FaTimes color="#F95E5A" size="25px" />
+            <FaTimes className="deleteItem" color="#F95E5A" size="25px" />
             <span>Remove</span>
           </Button >
         </div>

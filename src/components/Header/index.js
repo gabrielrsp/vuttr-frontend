@@ -33,7 +33,7 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
       </div>
       <div className="control">
         <div className="inputBar">
-          <FaSearch className="BackgroundSearch logoSearch" color='#f26532' size={28} />
+          <FaSearch id='faSearch' />
           <SearchInput placeholder='search' value={filterValue} onChange={onChangeFilterValue} />
         </div>
         <div className="searchAddBox">
