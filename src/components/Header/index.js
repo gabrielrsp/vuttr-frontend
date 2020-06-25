@@ -12,7 +12,6 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
   const profile = useSelector(state => state.user.profile);
 
   return (
-
     <Container>
       <div className="contents">
         <img className="logo" src={logo} alt="vuttr" width={'12%'} />
@@ -48,7 +47,6 @@ export default function Header({ filterValue, onChangeFilterValue, onToggleCheck
         </div>
       </div>
     </Container>
-
   );
 }
 

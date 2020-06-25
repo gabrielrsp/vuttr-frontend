@@ -22,7 +22,6 @@ export const Item = styled.li`
   border: 0;
   border-radius: 5px;
 
-
   @media(max-width: 610px ) {
   .editItem{
     margin-right: 20px;
@@ -39,7 +38,6 @@ export const Item = styled.li`
   }
 
   }
-
 
   &:hover {
     background: rgba(255,255,255,0.9);
@@ -81,8 +79,6 @@ export const Item = styled.li`
   }
 
   a {
-
-
     padding-top: 10px;
     font-size: 30px;
     margin-bottom: 15px;
