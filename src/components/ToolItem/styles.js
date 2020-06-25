@@ -22,6 +22,25 @@ export const Item = styled.li`
   border: 0;
   border-radius: 5px;
 
+
+  @media(max-width: 610px ) {
+  .editItem{
+    margin-right: 20px;
+     span {
+       display: none;
+
+     }
+  }
+
+  .deleteItem{
+     span {
+       display: none;
+     }
+  }
+
+  }
+
+
   &:hover {
     background: rgba(255,255,255,0.9);
     transition: 0.33s;
@@ -62,6 +81,8 @@ export const Item = styled.li`
   }
 
   a {
+
+
     padding-top: 10px;
     font-size: 30px;
     margin-bottom: 15px;
