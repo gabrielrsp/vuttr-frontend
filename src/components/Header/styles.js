@@ -78,6 +78,13 @@ import styled from 'styled-components';
       display: block;
       margin-left: 0;
 
+      width: auto;
+      margin:  auto;
+      padding: 0 ;
+      position: sticky;
+      top: 0;
+
+
       button { margin: auto; }
 
       input { width: -webkit-fill-available; }
