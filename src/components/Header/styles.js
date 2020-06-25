@@ -9,6 +9,19 @@ import styled from 'styled-components';
   position: sticky;
   top: 0;
 
+
+  #faSearch {
+      color: #f26532;
+      width: auto;
+      background: rgba(0, 0, 0, 0.27);
+      height: 50px;
+      padding-left: 6px;
+      padding-right: 6px;
+      min-width: fit-content;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 5px;
+    }
+
   img {
       border-radius: 5px;
       align-self: flex-start;
@@ -65,17 +78,7 @@ import styled from 'styled-components';
       display: contents;
     }
 
-    #faSearch {
-      color: #f26532;
-      width: 60px;
-      background: rgba(0, 0, 0, 0.27);
-      height: 50px;
-      padding-left: 6px;
-      padding-right: 6px;
-      min-width: fit-content;
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 5px;
-    }
+
 
     .searchAddBox {
       display: contents;
