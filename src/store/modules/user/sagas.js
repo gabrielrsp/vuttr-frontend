@@ -14,13 +14,13 @@ export function* updateProfile({ payload }) {
     rest.oldPassword ? rest : {}
   );
 
-  if(!name){
+  if (!name) {
     toast.error('profile must have name');
     yield put(updateProfileFailure())
     return
   }
 
-  if(!email){
+  if (!email) {
     toast.error('profile must have email');
     yield put(updateProfileFailure())
     return
