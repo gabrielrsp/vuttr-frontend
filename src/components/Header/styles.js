@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
   export const Container = styled.header`
-  display: inline-block;
+  display: inline-grid;
   justify-content: center ;
   width: 100%;
   background: #4d4d4d;
