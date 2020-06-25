@@ -17,17 +17,6 @@ import styled from 'styled-components';
   @media(max-width: 610px ) {
     position: sticky;
 
-
-          /* TESTE */
-          width: 100%;
-      align-content: center;
-      padding: 5px 15px 10px;
-      margin-bottom: 13px;
-      border: 0;
-      border-radius: 5px;
-
-
-
   }
 
   .contents {
@@ -89,15 +78,6 @@ import styled from 'styled-components';
     @media(max-width: 610px ){
       display: block;
       margin-left: 0;
-
-      /* TESTE */
-      width: 100%;
-      align-content: center;
-      padding: 5px 15px 10px;
-      margin-bottom: 13px;
-      border: 0;
-      border-radius: 5px;
-
 
       button { margin: auto; }
 
@@ -217,6 +197,10 @@ export const SearchInput = styled.input`
   border: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  @media(max-width: 610px ){
+    width: 100%;
+  }
 
 `;
 
