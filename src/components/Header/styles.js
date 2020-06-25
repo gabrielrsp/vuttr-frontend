@@ -1,23 +1,17 @@
 import styled from 'styled-components';
 
   export const Container = styled.header`
-  display: flex;
-  justify-content: center ;
-  width: 100%;
-  background: #4d4d4d;
-  padding: 0 10px;
-  position: sticky;
-  top: 0;
 
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 0 20px;
-  padding: 0 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 4px;
-  position: sticky;
-  top: 0;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: #4d4d4d;
+    padding: 0 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    position: sticky;
+    top: 0;
 
   img {
       border-radius: 5px;
