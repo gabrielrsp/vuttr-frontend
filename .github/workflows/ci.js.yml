@@ -1,23 +1,26 @@
 name: ci
 
-on:
-  pull_request:
+on: push
 
 jobs:
   build:
+    name: React Build
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [10.x]
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12
-
-    - name: Install dependencies
-      run: yarn
-      
-    - name: Run Tests
-      run: yarn test
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Execute build and tests
+        run: |
+          yarn
+          yarn build
+          yarn test
+ 
+       
