@@ -16,7 +16,6 @@ import styled from 'styled-components';
 
   @media(max-width: 610px ) {
     position: sticky;
-
   }
 
   .contents {
@@ -187,7 +186,8 @@ export const CheckBoxInput = styled.input`
 `;
 
 export const SearchInput = styled.input`
-  height: 50px;
+  height: 50px;  display: block;
+      margin-left: 0;
   width: auto;
   padding-left: 5px;
   margin: 0 ;
