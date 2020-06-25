@@ -14,6 +14,18 @@ export function* updateProfile({ payload }) {
     rest.oldPassword ? rest : {}
   );
 
+  if(!name){
+    toast.error('profile must have name');
+    yield put(updateProfileFailure())
+    return
+  }
+
+  if(!email){
+    toast.error('profile must have email');
+    yield put(updateProfileFailure())
+    return
+  }
+
   if (rest.password) {
     if (rest.password !== rest.confirmPassword) {
       toast.error('confirmation password is not matching with new password');

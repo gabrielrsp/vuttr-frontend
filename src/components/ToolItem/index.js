@@ -4,10 +4,16 @@ import { FaTimes, FaEdit } from "react-icons/fa";
 
 function ToolItem({ tool, onDeleteModal, onEditModal }) {
 
+  let newUrl = tool.link
+
+  if (!tool.link.match(/^[a-zA-Z]+:\/\//)) {
+    newUrl = tool.link = 'http://' + tool.link;
+  }
+
   return (
     <Item >
       <div id="controlItem" className="flex">
-        <a href={`${tool.link}`}>{tool.title}</a>
+        <a href={`${newUrl}`}>{tool.title}</a>
         <div className="buttons">
           <Button className="editItem" onClick={onEditModal} >
             <FaEdit color="#FFBB43" size="25px" />

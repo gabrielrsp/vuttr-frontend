@@ -8,7 +8,7 @@ describe('ModalAdd component', () => {
   it('should render add input fields ', () => {
     const { getByPlaceholderText } = render(<ModalAdd />)
     getByPlaceholderText('Tool title');
-    getByPlaceholderText('Enter URL here');
+    getByPlaceholderText('https://www.example.com');
     getByPlaceholderText('Description of the tool...');
     getByPlaceholderText('Tags');
   })
@@ -18,7 +18,7 @@ describe('ModalEdit component', () => {
   it('should render edit input fields', () => {
     const { getByPlaceholderText } = render(<ModalEdit />)
     getByPlaceholderText('Tool title');
-    getByPlaceholderText('Enter URL here');
+    getByPlaceholderText('https://www.example.com');
     getByPlaceholderText('Description of the tool...');
     getByPlaceholderText('Tags');
 

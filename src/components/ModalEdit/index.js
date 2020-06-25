@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Container } from './styles';
 import { FaEdit } from "react-icons/fa";
 
-export default function ModalEdit({ title, link, description, tags, onUpdateTool, onCloseEditModal, onEditTool, onChangeTitle, onChangeLink, onChangeDescription, onChangeTags }) {
+export default function ModalEdit({ title, link, description, tags, onUpdateTool, onCloseEditModal, onChangeTitle, onChangeLink, onChangeDescription, onChangeTags }) {
 
   const useOutsideClick = (ref, callback) => {
 
@@ -24,7 +24,7 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
 
   useOutsideClick(ref, () => {
     onCloseEditModal
-    ()
+      ()
   });
 
   return (
@@ -38,7 +38,7 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
       <input type="text" placeholder="Tool title" value={title} onChange={onChangeTitle} />
 
       <h4 className="title" >Tool Link</h4>
-      <input type="text" placeholder="Enter URL here" value={link} onChange={onChangeLink} />
+      <input type="text" placeholder="https://www.example.com" value={link} onChange={onChangeLink} />
 
       <h4 className="title" >Tool Description</h4>
       <textarea placeholder="Description of the tool..." value={description} onChange={onChangeDescription} />
