@@ -15,13 +15,13 @@ export function* updateProfile({ payload }) {
   );
 
   if (!name) {
-    toast.error('profile must have name');
+    toast.error('Profile must have name');
     yield put(updateProfileFailure())
     return
   }
 
   if (!email) {
-    toast.error('profile must have email');
+    toast.error('Profile must have email');
     yield put(updateProfileFailure())
     return
   }
