@@ -37,7 +37,6 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
       <input type="text" placeholder="Tool title" onChange={onChangeTitle} />
 
 
-
       <h4 className="title" >Tool Description</h4>
       <textarea placeholder="Description of the tool..." onChange={onChangeDescription} />
 
