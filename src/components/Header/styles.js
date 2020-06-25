@@ -9,7 +9,15 @@ import styled from 'styled-components';
   position: sticky;
   top: 0;
 
-
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  position: sticky;
+  top: 0;
 
   img {
       border-radius: 5px;
@@ -17,18 +25,7 @@ import styled from 'styled-components';
     }
 
   @media(max-width: 610px ) {
-
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    padding: 0 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 4px;
-    top: 0;
-
     position: sticky;
-
   }
 
   .contents {
