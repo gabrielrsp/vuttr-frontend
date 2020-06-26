@@ -16,11 +16,11 @@ function ToolItem({ tool, onDeleteModal, onEditModal }) {
         <a href={`${newUrl}`}>{tool.title}</a>
         <div className="buttons">
           <Button className="editItem" onClick={onEditModal} >
-            <FaEdit color="#FFBB43" size="25px" />
+            <FaEdit id="faEdit" color="#f26532" size="25px" />
             <span>Edit</span>
           </Button >
           <Button className="deleteItem" onClick={onDeleteModal} >
-            <FaTimes className="deleteItem" color="#F95E5A" size="25px" />
+            <FaTimes id="faTimes" className="deleteItem" color="#f26532" size="25px" />
             <span>Remove</span>
           </Button >
         </div>

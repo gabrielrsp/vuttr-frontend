@@ -3,7 +3,7 @@ import styled from 'styled-components';
   export const Button = styled.div`
   display: flex;
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 10px;
   font-weight: bold;
   font-size: 20px;
   cursor:pointer;
@@ -23,11 +23,18 @@ export const Item = styled.li`
   border-radius: 5px;
 
   @media(max-width: 610px ) {
+
+  #faEdit {
+    width: 40px;
+  }
+
+  #faTimes {
+    width: 40px;
+  }
+
   .editItem{
-    margin-right: 20px;
      span {
        display: none;
-
      }
   }
 
@@ -55,24 +62,24 @@ export const Item = styled.li`
 
     .editItem {
       span {
-        color: #FFBB43;
+        color: #f26532;
         &:hover {
-          color: #ffab1a;
+        color: #f04b0f;
         }
         &:active {
-            color: #e69100;
+          color: #c03c0c;
         }
       }
     }
 
     .deleteItem {
       span {
-        color: #F95E5A;
+        color: #f26532;
         &:hover {
-          color: #CC4C4C;
+        color: #f04b0f;
         }
         &:active {
-            color: #A53F3F;
+          color: #c03c0c;
         }
       }
     }
