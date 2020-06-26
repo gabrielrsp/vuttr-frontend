@@ -69,7 +69,6 @@ export const Container = styled.div`
     }
   }
 
-
   h3 {
     font-size: 23px;
     margin-top: 20px;

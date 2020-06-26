@@ -20,5 +20,7 @@ jobs:
           yarn
           yarn test
           yarn build
+          yarn global add serve
+          serve -s build
           npx netlify-cli deploy --dir=public --prod
 
