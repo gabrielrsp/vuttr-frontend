@@ -14,10 +14,15 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: $ {{ secrets.NETLIFY_AUTH_TOKEN }}
 
+        run: |
+          yarn
+          yarn test
+          yarn build
 
-       - name: Deploy to netlify
+
+      - name: Deploy to netlify
         uses: netlify/actions/cli@master
-        env:
+         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
         with:
