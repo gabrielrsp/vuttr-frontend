@@ -9,14 +9,13 @@ jobs:
       # Checkout repo
       - uses: actions/checkout@v2
       - name: Install Dependencies
-        run: yarn
-      - name: Run tests
-        run:   yarn test
-      - name: Build site
-        run: yarn  build
+          run: |
+          yarn
+          yarn test
+          yarn build
       # Deploy the site with netlify-cli
       - name: Deploy Site
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: npx netlify-cli deploy --dir=public --prod
+          NETLIFY_AUTH_TOKEN: $ {{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx netlify-cli deploy --dir=build --prod
