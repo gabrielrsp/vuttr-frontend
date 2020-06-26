@@ -2,8 +2,6 @@ name: Build on push
 
 on:
   push:
-    branches:
-      - master
     paths-ignore:
       - ".github/**"
 jobs:
@@ -11,19 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build
 
-        - name: Deploy production to Netlify
+       - name: Deploy to Netlify
         uses: South-Paw/action-netlify-deploy@v1.0.4
+        with:
 
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: $ {{ secrets.NETLIFY_AUTH_TOKEN }}
-
           build-dir: './build'
-
         run: |
           yarn
           yarn test
           yarn build
-
+          npx netlify-cli deploy --dir=public --prod
