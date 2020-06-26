@@ -27,7 +27,6 @@ export const Item = styled.li`
     #faEdit {
       width: 40px;
     }
-
     #faTimes {
       width: 40px;
     }
@@ -37,7 +36,6 @@ export const Item = styled.li`
         display: none;
       }
     }
-
     .deleteItem{
       span {
         display: none;
@@ -58,7 +56,6 @@ export const Item = styled.li`
   .flex{
     display: flex;
     justify-content: space-between;
-
 
     .editItem {
       span {

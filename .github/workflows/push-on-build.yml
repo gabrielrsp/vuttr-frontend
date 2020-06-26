@@ -20,5 +20,4 @@ jobs:
           yarn
           yarn test
           yarn build
-          npx netlify-cli deploy
 
