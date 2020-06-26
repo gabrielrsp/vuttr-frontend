@@ -18,4 +18,5 @@ jobs:
           yarn
           yarn test
           yarn build
-          npx netlify-cli deploy --dir=build --prod
+          yarn global add netlify-cli
+          netlify deploy -p
