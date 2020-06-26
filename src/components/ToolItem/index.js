@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Item } from './styles';
 import { FaTimes, FaEdit } from "react-icons/fa";
 
-function ToolItem({ tool, onDeleteModal, onEditModal }) {
+export default function ToolItem({ tool, onDeleteModal, onEditModal }) {
 
   let newUrl = tool.link
 
@@ -34,5 +34,3 @@ function ToolItem({ tool, onDeleteModal, onEditModal }) {
     </Item>
   );
 }
-
-export default ToolItem;
