@@ -24,25 +24,25 @@ export const Item = styled.li`
 
   @media(max-width: 610px ) {
 
-  #faEdit {
-    width: 40px;
-  }
+    #faEdit {
+      width: 40px;
+    }
 
-  #faTimes {
-    width: 40px;
-  }
+    #faTimes {
+      width: 40px;
+    }
 
-  .editItem{
-     span {
-       display: none;
-     }
-  }
+    .editItem{
+      span {
+        display: none;
+      }
+    }
 
-  .deleteItem{
-     span {
-       display: none;
-     }
-  }
+    .deleteItem{
+      span {
+        display: none;
+      }
+    }
 
   }
 
