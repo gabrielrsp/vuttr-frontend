@@ -33,7 +33,7 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
         <h2>Add New Tool</h2>
       </div>
 
-      <h4 className="title" placeholder="" >Tool Title teste 12</h4>
+      <h4 className="title" placeholder="" >Tool Title teste 3</h4>
       <input type="text" placeholder="Tool title" onChange={onChangeTitle} />
 
       <h4 className="title" >Tool Link</h4>
