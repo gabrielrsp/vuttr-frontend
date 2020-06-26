@@ -7,10 +7,16 @@ on:
     paths-ignore:
       - ".github/**"
 jobs:
-  build:
+    deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+
       - name: Build
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -20,7 +26,6 @@ jobs:
           yarn
           yarn test
           yarn build
-          yarn global add serve
-          serve -s build
+
           npx netlify-cli deploy --dir=public --prod
 
