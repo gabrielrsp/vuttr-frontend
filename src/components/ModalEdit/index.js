@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Container } from './styles';
+import { EditForm } from './styles';
 import { FaEdit } from "react-icons/fa";
 
 export default function ModalEdit({ title, link, description, tags, onUpdateTool, onCloseEditModal, onChangeTitle, onChangeLink, onChangeDescription, onChangeTags }) {
@@ -28,7 +28,7 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
   });
 
   return (
-    <Container ref={ref} >
+    <EditForm onSubmit={onUpdateTool} ref={ref} >
       <div>
         <FaEdit style={{ marginRight: '5px' }} color="#f26532" size="25px" />
         <h2>Edit Tool</h2>
@@ -47,14 +47,14 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
       <input type="text" value={tags} placeholder="Tags" onChange={onChangeTags} />
 
       <div className="button">
-        <button className="editButton" onClick={onCloseEditModal} >
+        <button type="button" className="editButton" onClick={onCloseEditModal} >
           <span>Cancel</span>
         </button>
-        <button className="editButton" onClick={onUpdateTool} >
+        <button type="submit" className="editButton" >
           <span>Edit Tool</span>
         </button>
       </div>
-    </Container>
+    </EditForm>
   );
 
 }

@@ -9,7 +9,7 @@ const appearEffect = keyframes`
   }
 `;
 
-export const Container = styled.div`
+export const EditForm = styled.form`
 
 @media(max-width: 900px ) {
   width: 100%;
@@ -104,7 +104,6 @@ export const Container = styled.div`
       border: 1px solid #FFBB43;
       margin: 9px;
       }
-
 
   }
 
