@@ -10,11 +10,11 @@ const appearEffect = keyframes`
 `;
 
 
-export const Container = styled.div`
+export const Container = styled.form`
 
 @media(max-width: 900px ) {
   width: 100%;
-  height: 90%;
+  height: 75%;
   margin: 0 !important;
   .title {
     margin-left: 20px !important;

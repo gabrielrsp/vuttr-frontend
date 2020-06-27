@@ -60,6 +60,8 @@ export default function Main() {
       return;
     } else {
 
+      e.preventDefault()
+
       const response = await api.post('/tools', {
         title: newTitle,
         link: newLink,
@@ -178,7 +180,9 @@ export default function Main() {
     toggleOverlay(false)
   });
 
+
   let modalListener = (event) => {
+
 
     if (event.keyCode === 27) {
 
