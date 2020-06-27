@@ -134,6 +134,7 @@ export default function Main() {
       setNewTags('');
       setIdClick('')
       closeEditModal()
+      toast.success('Tool Updated');
     }
 
   }
