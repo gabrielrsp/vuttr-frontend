@@ -21,7 +21,7 @@
   -  [ReactJS](https://reactjs.org/)
   -  [Redux](https://redux.js.org/)
   -  [Redux-Saga](https://redux-saga.js.org/)
-  -  [React Router v4](https://github.com/ReactTraining/react-router)
+  -  [React Router](https://github.com/ReactTraining/react-router)
   -  [Axios](https://github.com/axios/axios)
   -  [History](https://www.npmjs.com/package/history)
   -  [Immer](https://github.com/immerjs/immer)
