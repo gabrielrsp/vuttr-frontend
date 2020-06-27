@@ -34,7 +34,7 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
       </div>
 
       <h4 className="title" placeholder="" >Tool Title</h4>
-      <input type="text" placeholder="Tool title" onChange={onChangeTitle} />
+      <input type="text" placeholder="Tool title" onChange={onChangeTitle} autoFocus />
 
       <h4 className="title" >Tool Link</h4>
       <input type="text" placeholder="https://www.example.com" onChange={onChangeLink} />

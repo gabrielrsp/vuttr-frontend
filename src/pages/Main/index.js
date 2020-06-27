@@ -54,7 +54,7 @@ export default function Main() {
 
   async function handleAddTool(e) {
 
-    if (!newTitle) {
+    if (!newTitle || newTitle.trim() === '') {
       e.preventDefault()
       toast.error('Tool Name is Required');
       return;
