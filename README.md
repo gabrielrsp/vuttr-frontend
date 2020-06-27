@@ -9,7 +9,7 @@
 
 ## 💻 Sobre o projeto
 
- VUTTR (Very Useful Tools to Remember) é uma repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
+ VUTTR (Very Useful Tools to Remember) é um repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
 
 ## Demo
 
