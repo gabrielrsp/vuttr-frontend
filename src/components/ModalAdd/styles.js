@@ -9,8 +9,7 @@ const appearEffect = keyframes`
   }
 `;
 
-
-export const Container = styled.form`
+export const AddForm = styled.form`
 
 @media(max-width: 900px ) {
   width: 100%;
@@ -104,7 +103,6 @@ export const Container = styled.form`
       border: 1px solid #1fcc6f;
       margin: 9px;
       }
-
   }
 
   .title {

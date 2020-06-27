@@ -102,10 +102,14 @@ export default function Main() {
 
   };
 
-  async function handleUpdateTool() {
+  async function handleUpdateTool(e) {
     if (!newTitle) {
       toast.error('Tool Name is Required');
+      return
     } else {
+
+
+      e.preventDefault()
 
       const response = await api.put(`tools/${idClick}`, {
         title: newTitle,

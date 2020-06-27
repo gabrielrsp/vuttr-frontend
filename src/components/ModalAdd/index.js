@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Container } from './styles';
+import { AddForm } from './styles';
 import { FaPlus } from "react-icons/fa";
 
 export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChangeLink, onChangeDescription, onChangeTags }) {
@@ -27,7 +27,7 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
   });
 
   return (
-    <Container ref={ref} >
+    <AddForm onSubmit={onAddTool} ref={ref} >
       <div>
         <FaPlus style={{ marginRight: '5px' }} color="#f26532" size="25px" />
         <h2>Add New Tool</h2>
@@ -46,14 +46,14 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
       <input type="text" placeholder="Tags" onChange={onChangeTags} />
 
       <div className="button">
-        <button className="addButton" onClick={onAddModal} >
+        <button type="button" className="addButton" onClick={onAddModal} >
           <span>Cancel</span>
         </button>
-        <button className="addButton" onClick={onAddTool} >
+        <button type="submit" className="addButton" >
           <span>Add Tool</span>
         </button>
       </div>
-    </Container>
+    </AddForm>
   );
 
 }
