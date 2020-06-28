@@ -37,7 +37,7 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
       <input type="text" placeholder="Tool title" onChange={onChangeTitle} autoFocus />
 
       <h4 className="title" >Tool Link</h4>
-      <input type="text" placeholder="https://www.example.com" onChange={onChangeLink} />
+      <input type="url" placeholder="https://www.example.com" onChange={onChangeLink} />
 
       <h4 className="title" >Tool Description</h4>
       <textarea placeholder="Description of the tool..." onChange={onChangeDescription} />

@@ -38,7 +38,7 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
       <input type="text" placeholder="Tool title" value={title} onChange={onChangeTitle} autoFocus />
 
       <h4 className="title" >Tool Link</h4>
-      <input type="text" placeholder="https://www.example.com" value={link} onChange={onChangeLink} />
+      <input type="url" placeholder="https://www.example.com" value={link} onChange={onChangeLink} />
 
       <h4 className="title" >Tool Description</h4>
       <textarea placeholder="Description of the tool..." value={description} onChange={onChangeDescription} />

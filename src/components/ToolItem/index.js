@@ -6,10 +6,6 @@ export default function ToolItem({ tool, onDeleteModal, onEditModal }) {
 
   let newUrl = tool.link
 
-  if (!tool.link.match(/^[a-zA-Z]+:\/\//)) {
-    newUrl = tool.link = 'http://' + tool.link;
-  }
-
   return (
     <Item >
       <div id="controlItem" className="flex">
