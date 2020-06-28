@@ -47,8 +47,11 @@ Supondo que você já tenha Node.JS e Yarn instalados,
 
 #### `yarn start`
 
-
 #### A aplicação irá executar na porta 3000
 
 Abra [http://localhost:3000](http://localhost:3000) para ver no browser
+
+#### Para executar os testes 
+
+#### `yarn test`
 
