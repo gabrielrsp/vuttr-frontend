@@ -29,6 +29,7 @@
   -  [styled-components](https://www.styled-components.com/)
   -  [React-Icons](https://react-icons.netlify.com/)
   -  [Reactotron](https://infinite.red/reactotron)
+  -  [Jest](https://jestjs.io/)
 
 
 ## 🔧 Instalando o projeto
@@ -51,7 +52,7 @@ Supondo que você já tenha Node.JS e Yarn instalados,
 
 Abra [http://localhost:3000](http://localhost:3000) para ver no browser
 
-#### Para executar os testes 
+#### Para executar os testes
 
 #### `yarn test`
 
