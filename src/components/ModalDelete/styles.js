@@ -11,14 +11,14 @@ const appearEffect = keyframes`
 
 export const Container = styled.div`
 
-@media(max-width: 610px ) {
-  width: 100%;
+  @media(max-width: 610px ) {
+    width: 100%;
+    margin: 90px !important;
 
-  margin: 90px !important;
-  .title {
-    margin-left: 20px !important;
+    .title {
+      margin-left: 20px !important;
+    }
   }
- }
 
   animation: ${appearEffect} 0.3s;
   display: flex;
@@ -56,9 +56,9 @@ export const Container = styled.div`
     border-radius: 5px;
 
     span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
     }
 
     &:hover {
@@ -74,6 +74,7 @@ export const Container = styled.div`
     margin-top: 20px;
     color: #fff;
   }
+
   h2 {
     margin-top: 5px;
     margin-left: 5px;

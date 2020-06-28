@@ -34,16 +34,31 @@ export default function ModalAdd({ onAddModal, onAddTool, onChangeTitle, onChang
       </div>
 
       <h4 className="title" placeholder="" >Tool Title</h4>
-      <input type="text" placeholder="Tool title" onChange={onChangeTitle} autoFocus />
+      <input
+        type="text"
+        placeholder="Tool title"
+        onChange={onChangeTitle} autoFocus
+      />
 
       <h4 className="title" >Tool Link</h4>
-      <input type="url" placeholder="https://www.example.com" onChange={onChangeLink} />
+      <input
+        type="url"
+        placeholder="https://www.example.com"
+        onChange={onChangeLink}
+      />
 
       <h4 className="title" >Tool Description</h4>
-      <textarea placeholder="Description of the tool..." onChange={onChangeDescription} />
+      <textarea
+        placeholder="Description of the tool..."
+        onChange={onChangeDescription}
+      />
 
       <h4 className="title" >Tags</h4>
-      <input type="text" placeholder="Tags" onChange={onChangeTags} />
+      <input
+        type="text"
+        placeholder="Tags"
+        onChange={onChangeTags}
+      />
 
       <div className="button">
         <button type="button" className="addButton" onClick={onAddModal} >

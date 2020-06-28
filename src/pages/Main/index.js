@@ -81,7 +81,6 @@ export default function Main() {
       toggleModalAdd();
       setIdClick('');
       toast.success('New Tool Added');
-
     }
   }
 
@@ -99,7 +98,6 @@ export default function Main() {
     setNewLink(link);
     setNewDescription(description);
     setNewTags(tags.toString().split(',').join(' '));
-
   };
 
   async function handleUpdateTool(e) {
@@ -185,9 +183,7 @@ export default function Main() {
     toggleOverlay(false)
   });
 
-
   let modalListener = (event) => {
-
 
     if (event.keyCode === 27) {
 
@@ -322,7 +318,6 @@ export default function Main() {
           </>
           : <></>
       }
-
     </>
   );
 }

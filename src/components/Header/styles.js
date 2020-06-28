@@ -9,7 +9,6 @@ import styled from 'styled-components';
   position: sticky;
   top: 0;
 
-
   #faSearch {
       color: #f26532;
       width: auto;
@@ -77,8 +76,6 @@ import styled from 'styled-components';
     .inputBar{
       display: contents;
     }
-
-
 
     .searchAddBox {
       display: contents;
@@ -167,7 +164,6 @@ import styled from 'styled-components';
     }
   }
 
-
   h1 {
     font-size: 36px;
     color: #fff;
@@ -235,18 +231,18 @@ export const AddButton = styled.button`
   padding: 5px 10px;
 
   span {
-      flex: 1;
-      color: #fff;
-      text-align: center;
-      font-weight: bold;
-      margin-left: 5px;
-    }
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 5px;
+  }
 
   &:hover {
     background: #10B26C;
   }
   &:active {
-      background: #0E995D;
+    background: #0E995D;
   }
 
 `;

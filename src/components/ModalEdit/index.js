@@ -35,16 +35,36 @@ export default function ModalEdit({ title, link, description, tags, onUpdateTool
       </div>
 
       <h4 className="title" placeholder="" >Tool Name</h4>
-      <input type="text" placeholder="Tool title" value={title} onChange={onChangeTitle} autoFocus />
+      <input
+        type="text"
+        placeholder="Tool title"
+        value={title}
+        onChange={onChangeTitle}
+        autoFocus
+      />
 
       <h4 className="title" >Tool Link</h4>
-      <input type="url" placeholder="https://www.example.com" value={link} onChange={onChangeLink} />
+      <input
+        type="url"
+        placeholder="https://www.example.com"
+        value={link}
+        onChange={onChangeLink}
+      />
 
       <h4 className="title" >Tool Description</h4>
-      <textarea placeholder="Description of the tool..." value={description} onChange={onChangeDescription} />
+      <textarea
+        placeholder="Description of the tool..."
+        value={description}
+        onChange={onChangeDescription}
+      />
 
       <h4 className="title" >Tags</h4>
-      <input type="text" value={tags} placeholder="Tags" onChange={onChangeTags} />
+      <input
+        type="text"
+        value={tags}
+        placeholder="Tags"
+        onChange={onChangeTags}
+      />
 
       <div className="button">
         <button type="button" className="editButton" onClick={onCloseEditModal} >

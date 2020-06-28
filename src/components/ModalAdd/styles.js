@@ -52,12 +52,11 @@ export const AddForm = styled.form`
     margin-right: 0;
 
     &:hover {
-        background: #179b55;
-      }
-
-      &:active {
-          background: #148549;
-      }
+      background: #179b55;
+    }
+    &:active {
+      background: #148549;
+    }
   }
 
   button {
@@ -74,16 +73,15 @@ export const AddForm = styled.form`
     display: flex;
 
     &:hover {
-        background: #179b55;
-      }
-
+      background: #179b55;
+    }
     &:active {
-        background: #148549;
+      background: #148549;
     }
     span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
     }
   }
 
@@ -102,7 +100,7 @@ export const AddForm = styled.form`
     &:focus {
       border: 1px solid #1fcc6f;
       margin: 9px;
-      }
+    }
   }
 
   .title {
@@ -144,11 +142,11 @@ export const AddForm = styled.form`
     &:focus {
       border: 1px solid #1fcc6f;
       margin: 9px;
-      }
+    }
 
     &::placeholder {
       font-size: 14px;
-      }
+    }
   }
 
 `;

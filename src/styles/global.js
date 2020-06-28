@@ -1,8 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
 import 'react-toastify/dist/ReactToastify.css';
-
-
 import logoBackground from '../assets/logoBackground.svg';
 import logoProfile from '../assets/logoProfile.svg';
 
@@ -56,8 +53,6 @@ export default createGlobalStyle`
     color: #222;
 
     font-family: Arial, Helvetica, sans-serif;
-
-
   }
 
   button {

@@ -11,14 +11,14 @@ const appearEffect = keyframes`
 
 export const EditForm = styled.form`
 
-@media(max-width: 900px ) {
-  width: 100%;
-  height: 75%;
-  margin: 0 !important;
-  .title {
-    margin-left: 20px !important;
+  @media(max-width: 900px ) {
+    width: 100%;
+    height: 75%;
+    margin: 0 !important;
+    .title {
+      margin-left: 20px !important;
+    }
   }
- }
 
   animation: ${appearEffect} 0.3s;
   display: flex;
@@ -45,7 +45,6 @@ export const EditForm = styled.form`
     margin: 20px 20px 10px;
   }
 
-
   .editButton {
     background: #FFBB43;
     margin-bottom: 8px;
@@ -54,11 +53,10 @@ export const EditForm = styled.form`
 
     &:hover {
       background: #ffab1a;
-      }
-
-      &:active {
+    }
+    &:active {
         background: #e69100;
-      }
+    }
   }
 
   button {
@@ -75,12 +73,12 @@ export const EditForm = styled.form`
     display: flex;
 
     &:hover {
-        background: #179b55;
-      }
-
-    &:active {
-        background: #148549;
+      background: #179b55;
     }
+    &:active {
+      background: #148549;
+    }
+
     span {
         flex: 1;
         text-align: center;
@@ -103,8 +101,7 @@ export const EditForm = styled.form`
     &:focus {
       border: 1px solid #FFBB43;
       margin: 9px;
-      }
-
+    }
   }
 
   .title {
@@ -146,11 +143,10 @@ export const EditForm = styled.form`
     &:focus {
       border: 1px solid #FFBB43;
       margin: 9px;
-      }
-
+    }
     &::placeholder {
       font-size: 14px;
-      }
+    }
   }
 
 `;

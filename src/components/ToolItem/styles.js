@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
   export const Button = styled.div`
-  display: flex;
-  margin-top: 15px;
-  margin-left: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  cursor:pointer;
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor:pointer;
 
-  span {
-    margin-top: 2px;
-  }
+    span {
+      margin-top: 2px;
+    }
 `;
 
 export const Item = styled.li`
@@ -90,11 +90,11 @@ export const Item = styled.li`
     color: #f26532;
 
     &:hover {
-        color: #f04b0f;
-      }
-      &:active {
-        color: #c03c0c;
-      }
+      color: #f04b0f;
+    }
+    &:active {
+      color: #c03c0c;
+    }
   }
 
   p {
