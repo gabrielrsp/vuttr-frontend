@@ -103,7 +103,7 @@ export default function Main() {
   async function handleUpdateTool(e) {
     if (!newTitle) {
       e.preventDefault()
-      toast.error('Tool Name is Required');
+      toast.error('A Tool Name is Required');
       return;
     } else {
 
