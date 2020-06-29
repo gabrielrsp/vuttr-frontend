@@ -132,7 +132,7 @@ export default function Main() {
       setNewTags('');
       setIdClick('')
       closeEditModal()
-      toast.success('Tool is Updated');
+      toast.success('Tool Updated');
     }
 
   }
