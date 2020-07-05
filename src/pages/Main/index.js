@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import { toast } from 'react-toastify';
-import { ToolList, Overlay } from './styles';
+import { ToolList, Overlay, LoadingMessage } from './styles';
 
 import api from '../../services/api';
 import Header from '../../components/Header';
@@ -9,6 +9,7 @@ import ModalAdd from '../../components/ModalAdd';
 import ModalDelete from '../../components/ModalDelete';
 import ModalEdit from '../../components/ModalEdit';
 import ToolItem from '../../components/ToolItem';
+import lottie from 'lottie-web';
 
 export default function Main() {
 
@@ -17,7 +18,7 @@ export default function Main() {
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
 
-  const [tool, setTool] = useState([]);
+  const [tool, setTool] = useState([] | null );
   const [idClick, setIdClick] = useState(1);
 
   const [newTitle, setNewTitle] = useState('');
@@ -177,6 +178,20 @@ export default function Main() {
     });
   };
 
+  useEffect(() => {
+
+    lottie.loadAnimation({
+      container: boxAnimation.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../../assets/gear.json')
+    })
+
+  }, [])
+
+  const boxAnimation = useRef(null);
+
   const ref = useRef();
 
   useOutsideClick(ref, () => {
@@ -224,6 +239,8 @@ export default function Main() {
       <ToolList>
 
         {
+
+
           filter.trim() ?
 
             checkBox ?
@@ -241,6 +258,7 @@ export default function Main() {
                 ))
 
               :
+              
 
               tool.filter(tool => (tool.title.toLowerCase().startsWith(filter.toLowerCase().trim())))
                 .map(tool => (
@@ -254,6 +272,16 @@ export default function Main() {
                   </>
                 ))
             :
+
+
+                     !tool ?
+            <>
+            <LoadingMessage>Loading Tools...</LoadingMessage>
+            <div ref={boxAnimation} ></div>
+            </>
+    
+            :
+         
 
             tool.map(tool => (
               <>

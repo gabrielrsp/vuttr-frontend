@@ -25,6 +25,7 @@
   -  [Axios](https://github.com/axios/axios)
   -  [History](https://www.npmjs.com/package/history)
   -  [Immer](https://github.com/immerjs/immer)
+  -  [Lottie](https://airbnb.design/lottie/)
   -  [React-Toastify](https://fkhadra.github.io/react-toastify/)
   -  [styled-components](https://www.styled-components.com/)
   -  [React-Icons](https://react-icons.netlify.com/)

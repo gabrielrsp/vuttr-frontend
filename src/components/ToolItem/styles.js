@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearEffect = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
   export const Button = styled.div`
     display: flex;
@@ -14,6 +23,7 @@ import styled from 'styled-components';
 `;
 
 export const Item = styled.li`
+animation: ${appearEffect} 0.3s;
   width: 100%;
   align-content: center;
   padding: 5px 15px 10px;

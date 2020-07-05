@@ -29,3 +29,11 @@ import styled from 'styled-components';
     }
 
   `;
+
+  export const LoadingMessage = styled.h1`
+    display: flex;
+    justify-content: center;
+   color: #f26532;
+  `;
+
+
