@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "history": "^4.10.1",
-    "immer": "^6.0.9",
+    "immer": "^9.0.6",
     "jwt-decode": "^2.2.0",
     "lottie-web": "^5.7.0",
     "polished": "^3.6.4",
