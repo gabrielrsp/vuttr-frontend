@@ -53,6 +53,8 @@ Supondo que você já tenha Node.JS e Yarn instalados,
 
 Abra [http://localhost:3000](http://localhost:3000) para ver no browser
 
+#### Backend do projeto: https://github.com/gabrielrsp/vuttr
+
 #### Para executar os testes
 
 #### `yarn test`
