@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img alt="Tools" src="https://www.integrant.com/wp-content/uploads/2015/02/icon-services-toolstechnologies.png" width="160px" />
+  <img alt="Tools" src="/src/assets/icon.png" width="160px" />
 </h1>
 
 <h3 align="center">VUTTR - Very Useful Tools to Remember</h3>
