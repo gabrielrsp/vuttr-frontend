@@ -5,18 +5,18 @@
 
 <h3 align="center">VUTTR - Very Useful Tools to Remember</h3>
 
-<p align="center">Desafio Front-end da BossaBox</p>
+<p align="center">A frontend challenge by BossaBox</p>
 
 ## 💻 Sobre o projeto
 
- VUTTR (Very Useful Tools to Remember) é um repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
+ VUTTR (Very Useful Tools to Remember) is a repository for managing tools with their respective names, links, descriptions and tags.
 
 ## Demo
 
 ![](vuttrDemo.gif)
 
 
- #### Tecnologias utilizadas
+ #### Tecnologies used on this project
 
   -  [ReactJS](https://reactjs.org/)
   -  [Redux](https://redux.js.org/)
@@ -37,25 +37,23 @@
 
 Supondo que você já tenha Node.JS e Yarn instalados,
 
-### Clone este repositório
+### Clone this repository
 
 #### `git clone https://github.com/gabrielrsp/vuttr-frontend.git`
 
-### Instale as dependências
+### Install dependencies with your package manager (ex: yarn or npm)
 
-#### `yarn`
+#### Execute the application
 
-#### Execute a aplicação com o comando
+#### `ex: yarn start`
 
-#### `yarn start`
+#### The application will run on port 3000
 
-#### A aplicação irá executar na porta 3000
+Open [http://localhost:3000](http://localhost:3000) to see the appplication running on the browser
 
-Abra [http://localhost:3000](http://localhost:3000) para ver no browser
+#### you can run the backend of this project acessing : https://github.com/gabrielrsp/vuttr
 
-#### Backend do projeto: https://github.com/gabrielrsp/vuttr
-
-#### Para executar os testes
+#### To execute tests
 
 #### `yarn test`
 
