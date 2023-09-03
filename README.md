@@ -7,7 +7,7 @@
 
 <p align="center">A frontend challenge by BossaBox</p>
 
-## 💻 Sobre o projeto
+## 💻 About the project
 
  VUTTR (Very Useful Tools to Remember) is a repository for managing tools with their respective names, links, descriptions and tags.
 
@@ -33,7 +33,7 @@
   -  [Jest](https://jestjs.io/)
 
 
-## 🔧 Instalando o projeto
+## 🔧 Installing the project
 
 Supondo que você já tenha Node.JS e Yarn instalados,
 
